@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
+ @Component({
+   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Angular Basic';
@@ -13,5 +13,6 @@ export class AppComponent {
 
   greet(){
   alert(`Hi ${this.message} !!!`);
+   }
   }
-}
+ 

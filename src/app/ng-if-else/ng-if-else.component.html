@@ -1,0 +1,23 @@
+<p *ngIf="true"> If NgIf is true paragraph is displayed</p> 
+<ng-template [ngIf]="false"><p>ng-template-content is displayed if ngIf is true</p></ng-template>
+    <!-- then and else block   -->
+<div *ngIf="ngIfcondition; then thenblock else elseblock"></div>
+<ng-template #thenblock >If ngIf is {{ngIfcondition}}, thenblock content is displayed</ng-template> 
+<ng-template #elseblock>If ngIf is {{ngIfcondition}}, elseblock content is displayed</ng-template>
+
+<br>
+<button (click)="show=!show">{{show?"hide":"show"}}</button>
+<div *ngIf="show; then thenshow else elsehide"></div>
+<ng-template #thenshow><p>Content is shown</p></ng-template> 
+<ng-template #elsehide><p>Content is hidden</p></ng-template>
+
+<button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+    <button (click)="switchPrimary()">Switch Primary</button>
+    show = {{show}}
+    <br>
+    <div *ngIf="show; then thenBlock; else elseBlock">this is ignored</div>
+    <ng-template #primaryBlock>Primary text to show</ng-template>
+    <ng-template #secondaryBlock>Secondary text to show</ng-template>
+    <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>
+
+

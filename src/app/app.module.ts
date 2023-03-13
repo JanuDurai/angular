@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgIfElseComponent } from './ng-if-else/ng-if-else.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NgIfElseComponent
   ],
   imports: [
     BrowserModule,
