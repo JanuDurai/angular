@@ -1,0 +1,8 @@
+<h2>Child component</h2>
+<p > child interacted with Parent and the childvalue is: "{{childvalue}} "</p>
+
+<p>"{{name}}"</p>
+
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button (click)="AddNewItem(newItem.value)">Click</button>

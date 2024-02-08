@@ -1,23 +1,28 @@
-import { Component, DestroyRef, OnDestroy, inject } from '@angular/core';
+import { Component, DestroyRef, OnDestroy, inject ,InputDecorator, OnChanges, SimpleChanges} from '@angular/core';
+import { HookMethodsComponent } from './hook-methods/hook-methods.component';
+import { EncapsulationComponent } from './encapsulation/encapsulation.component';
 // import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  // imports:[NgOptimizedImage]
-  // standalone:true
+  // imports:[HookMethodsComponent,EncapsulationComponent]
+
 })
 
-export class AppComponent {
+export class AppComponent  {
+  
   title = 'Angular-practice';
-
   dynamicMessage: string = "Dynamically updated a value";
   contentUpdate = false;
   disabledPropertyValue = "disabled";
   buttonDynamicValue = "Click";
-  condition = true; //false;
+  condition = false; //false;
   listofItems = ["item1", "item2", "item3", "item4", "item5"];
+  onchangeData="initial initialisation";
+  onchangecheckdata="In parent classs";
+   destroy:boolean=true;
 
   updateContent(Message: string) {
     this.dynamicMessage = Message;
@@ -28,20 +33,13 @@ export class AppComponent {
   isbuttonClicked() {
     this.buttonDynamicValue = "button Clicked";
   }
+   constructor(){
+        setTimeout(()=> this.onchangeData="Final value updated",5000);
+        // this.onchangecheckdata="In parent classs constructor value changed"
+    }
 
- 
+     isDestroy(){
+      this.destroy=! this.destroy;
+     }
 
 }
-
-export class counter{
-      count=0;
-    constructor(){
-      const id=setInterval(()=> this.count++,1000);
-      const destroyRef= inject(DestroyRef)
-      const destroyInterval = destroyRef.onDestroy(()=> clearInterval(id));  
-      destroyInterval(); 
-      }
-}
-
-
-
