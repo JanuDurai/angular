@@ -12,6 +12,10 @@ import { InteractionComponent } from './interaction/interaction.component';
 import { ParentComponentComponent } from './interaction/parent-component/parent-component.component';
 import { SiblingComponentComponent } from './interaction/sibling-component/sibling-component.component';
 import { ChildComponentComponent } from './interaction/parent-component/child-component/child-component.component';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
+import { SingleSlotComponent } from './content-projection/single-slot/single-slot.component';
+import { MultipleSlotComponent } from './content-projection/multiple-slot/multiple-slot.component';
+import { ConditionalProjectionComponent } from './content-projection/conditional-projection/conditional-projection.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { ChildComponentComponent } from './interaction/parent-component/child-co
     InteractionComponent,
     ParentComponentComponent,
     SiblingComponentComponent,
-    ChildComponentComponent
+    ChildComponentComponent,
+    ContentProjectionComponent,
+    SingleSlotComponent,
+    MultipleSlotComponent,
+    ConditionalProjectionComponent
   ],
   imports: [
     BrowserModule,

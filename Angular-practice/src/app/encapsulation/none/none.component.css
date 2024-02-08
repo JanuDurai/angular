@@ -5,8 +5,10 @@ section{
 h2{
     color: black;
     background-color: gray;
+    display:inline;
 }
 
 p{
     color: brown;
+    display: block;
 }
