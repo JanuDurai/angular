@@ -9,16 +9,17 @@ import { ChildActivationStart } from '@angular/router';
 })
 export class ParentComponentComponent implements AfterViewInit {
 
-  @ViewChild(ChildComponentComponent) child !: ChildComponentComponent;
-  constructor() {
-  }
+  @ViewChild(ChildComponentComponent)
+  child: ChildComponentComponent;
+  constructor() { }
 
-  message: string | undefined;
+  message: string;
   parentValue: string = "Value in Parent class";
 
   ngAfterViewInit(): void {
     this.message = this.child.message;
   }
+
   names = ["    janu    ", "  shree  ", "  durai   "]
 
   items = ['item1', 'item2', 'item3', 'item4'];

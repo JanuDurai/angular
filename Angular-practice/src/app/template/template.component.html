@@ -1,0 +1,58 @@
+<h3>{{title}}</h3>
+<img src="{{imgUrl}}" alt="" width="300" height="200">
+<p>Addition of 2 numbers {{10+20}}</p>
+<p>string concatenation {{"Hello " + "World...!"}}</p>
+<p>{{"title"}}</p>
+
+<p>{{title + content}}</p>
+<p>{{title}} : {{ content}}</p>
+
+<p>{{title + " : " + content}} </p>
+
+<!-- <p  style =" color: {{color}} "> interpolation in css property using inline css</p> 
+
+<p style =" {{property}} : {{color}} ">property and value both are interpolated </p> -->
+
+<button [disabled]="true"> Click</button>
+
+<p> Function interpolation: {{functionInterpolation()}}</p>
+
+<p>Max of two numbers: {{Max(100,200)}}</p>
+
+<h3>Template statements</h3>
+<p> Student details: {{studentDetails}}</p>
+
+
+<label for="">Enter Student Details
+<label for="">Enter name:
+    <input type="text" #stuname>   Entered name is: {{stuname.value}}
+</label><br>
+<label for="">Enter standard
+    <input type="number" min="1" max="12" #stdstandard>    Entered standrad is:  {{stdstandard.value}}
+</label><br>
+<button (click)="inputDisplay(stuname.value,stdstandard.value)">Submit</button>
+</label>
+
+
+<p *ngIf="valueChange">Student details: {{studentDetails}}</p>
+
+<p>{{array}}</p>
+
+<button (click)="Arraypush()">click</button>
+<!-- <p>{{Arraypush()}}</p> -->
+
+<p *ngIf="arrayChange">{{array}}</p>
+
+<h4>Live binding check</h4>
+
+<p>previous value: {{value}} {{valchange()}} <br> current value: {{value}}</p>
+
+
+<p> referrence variable value - student name:  {{stuname.value}}</p>
+<p> referrence variable value- student value :  {{stdstandard.value}}</p>
+
+
+<h5>Employee details</h5>
+<ol>
+    <li *ngFor="let employee of employeeDetails">FirstName:  {{employee.firstname}}</li>
+</ol>

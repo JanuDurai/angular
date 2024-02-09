@@ -2,11 +2,18 @@
 
 <p> Value interacted from child to parent: "{{message}}"</p>
 
-<app-child-component [childvalue]="parentValue" *ngFor="let name of names" [name1]="name"></app-child-component>
+<app-child-component [childvalue]="parentValue" [name1]="names[0]"
+  (NewItemEvent)="addItem($event)"></app-child-component>
+<div>
+  <ul>
+    <li *ngFor="let name of names">
+      {{name}}
+    </li>
+  </ul>
+</div>
 
-<app-child-component (NewItemEvent)="addItem($event)"></app-child-component>
 
 
 <ul>
-    <li *ngFor="let item of items">{{item}}</li>
-  </ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>

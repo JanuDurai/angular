@@ -16,6 +16,7 @@ import { ContentProjectionComponent } from './content-projection/content-project
 import { SingleSlotComponent } from './content-projection/single-slot/single-slot.component';
 import { MultipleSlotComponent } from './content-projection/multiple-slot/multiple-slot.component';
 import { ConditionalProjectionComponent } from './content-projection/conditional-projection/conditional-projection.component';
+import { TemplateComponent } from './template/template.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ConditionalProjectionComponent } from './content-projection/conditional
     ContentProjectionComponent,
     SingleSlotComponent,
     MultipleSlotComponent,
-    ConditionalProjectionComponent
+    ConditionalProjectionComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
