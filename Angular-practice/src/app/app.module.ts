@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModel} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,10 @@ import { SingleSlotComponent } from './content-projection/single-slot/single-slo
 import { MultipleSlotComponent } from './content-projection/multiple-slot/multiple-slot.component';
 import { ConditionalProjectionComponent } from './content-projection/conditional-projection/conditional-projection.component';
 import { TemplateComponent } from './template/template.component';
+import { DatePipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
+import { CustompipePipe } from './custompipe.pipe';
+import { ImgUrlPipe } from './img-url.pipe';
 
 @NgModule({
   declarations: [
@@ -34,11 +40,16 @@ import { TemplateComponent } from './template/template.component';
     SingleSlotComponent,
     MultipleSlotComponent,
     ConditionalProjectionComponent,
-    TemplateComponent
+    TemplateComponent,
+    CustompipePipe,
+    ImgUrlPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    DatePipe,
+    CurrencyPipe,
   ],
   providers: [],
   bootstrap: [AppComponent]

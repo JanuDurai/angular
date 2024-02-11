@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
@@ -12,6 +13,27 @@ export class TemplateComponent {
   content = "Interpolation binds the expression with values";
   property = "color";
   color = "green";
+  classname = "paratag"
+  center = "center"
+  bold = "bold";
+  eventcontent = "";
+  birthday = new Date(2001, 9, 23);
+  text: string = 'Default   ';
+  twowaybinding = "Default value";
+  todaydatetime = Date.now();
+  lowercasetext = 'text transfered to uppercase';
+  uppercasetext = "TEXT TRANSFERED TO LOWERCASE";
+  currencyvalue = 0.3567;
+  number=3.34564789;
+  sampleString="Vannila"
+
+  string1="string1 displayed in uppercase";
+  string2="string2 displayed in uppercase";
+  feet=4.578;
+  url="";
+  // url="../assets/cat.jpg";
+
+  
 
 
   functionInterpolation() {
@@ -24,28 +46,45 @@ export class TemplateComponent {
 
   studentDetails: (number | string)[] = [];
 
-  array:number[] = [10, 20];
-  valueChange=false;
-  arrayChange=false;
+  array: number[] = [10, 20];
+  valueChange = false;
+  arrayChange = false;
   Arraypush() {
     this.array.push(30);
-    this.arrayChange=true;
+    this.arrayChange = true;
   }
 
   inputDisplay(stuname: any, stustd: any) {
     this.studentDetails.push(stuname);
     this.studentDetails.push(stustd);
-    this.valueChange=true;
+    this.valueChange = true;
   }
-  value:string="value not updated";
+  value: string = "value not updated";
 
-  valchange(){
-   setTimeout(()=> this.value="value updated",3000)
+  valchange() {
+    setTimeout(() => this.value = "value updated", 3000)
   }
 
-  employeeDetails=[{firstname:"janu",lastname:"shree", dept:"eee"},
-  {firstname:"vinu",lastname:"dharshini", dept:"cse"},
-  {firstname:"sume",lastname:"ka", dept:"it"}];
+  employeeDetails = [{ firstname: "janu", lastname: "shree", dept: "eee" },
+  { firstname: "vinu", lastname: "dharshini", dept: "cse" },
+  { firstname: "sume", lastname: "ka", dept: "it" }];
+
+  changecolor() {
+    this.eventcontent = "when button clicked paragraph is displayed";
+    this.color = "purple";
+  }
+
+  oneWayBinding(text: any) {
+
+    this.text = text;
+
+  }
+
+
+  onchangeText(event: any) {
+    this.twowaybinding = event.target.text;
+  }
+
 
 
 }

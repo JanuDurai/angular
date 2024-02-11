@@ -5,4 +5,13 @@
 
 <label for="item-input">Add an item:</label>
 <input type="text" id="item-input" #newItem>
-<button (click)="AddNewItem(newItem.value)">Click</button>
+<button (click)="AddNewItem(newItem.value)" >Click</button>
+<ng-content></ng-content>
+<ng-content select="[items]"></ng-content>
+
+
+
+
+
+
+

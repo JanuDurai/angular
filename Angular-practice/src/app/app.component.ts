@@ -1,7 +1,7 @@
 import { Component, DestroyRef, OnDestroy, inject ,InputDecorator, OnChanges, SimpleChanges} from '@angular/core';
-import { HookMethodsComponent } from './hook-methods/hook-methods.component';
-import { EncapsulationComponent } from './encapsulation/encapsulation.component';
-// import { NgOptimizedImage } from '@angular/common';
+// import { HookMethodsComponent } from './hook-methods/hook-methods.component';
+// import { EncapsulationComponent } from './encapsulation/encapsulation.component';
+// // import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',

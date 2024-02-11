@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+
 @Component({
   selector: 'app-child-component',
   templateUrl: './child-component.component.html',
@@ -10,7 +11,7 @@ export class ChildComponentComponent {
   @Input() childvalue: string | undefined;
   @Input() name1: string = "";
   @Output() NewItemEvent = new EventEmitter<string>();
-  
+
   set name(name: string) {
     this.name1 = name;
   }
