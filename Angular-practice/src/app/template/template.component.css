@@ -19,10 +19,12 @@ img{
     color:red;
     text-decoration-line: underline;
     text-decoration-color: darkcyan;
+    font-style: italic
 
 }
 
 .class2{
     color:cadetblue;
     text-decoration-line: overline;
+    /* font-style: normal; */
 }

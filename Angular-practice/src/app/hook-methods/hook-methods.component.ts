@@ -35,6 +35,7 @@ export class HookMethodsComponent implements OnChanges, OnInit, OnDestroy {
     this.initCount++;
 
   }
+  
   ngOnDestroy(): void {
     console.log("element destroyed");
 

@@ -2,3 +2,49 @@
     background-color: aquamarine;
     display: inline;
 }
+
+.first{
+    color:darkturquoise;
+}
+
+.second{
+    color:indigo;
+}
+.boldbold{
+    font-weight: bold;
+}
+
+.boldtext{
+    font-size:larger;
+}
+
+.bold{
+    font-style:italic;
+}
+
+.classname3{
+    font-variant: small-caps;
+    color:darkmagenta;
+}
+
+.classname4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:darkcyan
+}
+
+.classname5{
+    font-variant: small-caps;
+}
+.class{
+    font-size: larger;
+}
+
+.class2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.class3{
+    font-weight: bolder;
+    color:darkgreen
+}
+
