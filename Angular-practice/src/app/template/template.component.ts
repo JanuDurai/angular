@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import { CustompipePipe } from '../custompipe.pipe';
+// import { Pipe } from '@angular/core';
 
 
 @Component({

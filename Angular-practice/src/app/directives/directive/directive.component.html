@@ -27,6 +27,7 @@
 <h5>ngstyles with function</h5>
 
 <p [ngStyle]="styles">Ng styles with method</p>
+
 <!-- 
 <input type="text" [ngModel]="bindingproperty"  (ngModelChanges)="changeToUppercase($event)">
 <p>Bind:{{bindingproperty}}</p> -->
@@ -48,16 +49,52 @@
 <ng-template #elseblock>Else block displayed</ng-template>
 
 <h4>Ngif with then and else block</h4>
-<div *ngIf="condition; then thenblock else elseblock" > </div>
+<div *ngIf="condition; then thenblock else elseblock"> </div>
 <ng-template #thenblock>Then block is displayed</ng-template>
 <ng-template #elseblock> Else block is displayed</ng-template>
 
 
 <h4>Storing value locally</h4>
 
-<div *ngIf="condition as value else elseblock" >locally stored value is : {{value}}</div>
+<div *ngIf="condition as value else elseblock">locally stored value is : {{value}}</div>
 <ng-template #elseblock>Else block</ng-template>
 
+<br><br>
+
+<button (click)="show=!show">{{show? "hide": "show"}}</button>
+
+<div *ngIf="show"> When show button is clicked content is shown</div>
+
+<h4>NgFor</h4>
+
+<ul>
+    <li *ngFor="let item of items">{{item.name}}</li>
+</ul>
+
+<h4>Getting index</h4>
+
+<div *ngFor="let item of arrayItems; let i = index">index: {{i+1}} value: {{item}}</div>
+
+<h4>trackby</h4>
+
+<div *ngFor="let item of arrayItems; trackby: trackByIndex">{{item}} </div>
 
 
+<h4>hosting directive without dom element</h4>
+<ng-container *ngIf=true>ng container without dom element</ng-container>
 
+<h4>ngSwitch </h4>
+<div [ngSwitch]="day">
+<div *ngSwitchCase=1>Sunday</div>
+<div *ngSwitchCase=2>Monday</div>
+<div *ngSwitchCase=3>Tuesday</div>
+<div *ngSwitchCase=4>Wednesday</div>
+<div *ngSwitchCase=5>Thursday</div>
+<div *ngSwitchCase=6>Friday</div>
+<div *ngSwitchCase=7>Saturday</div>
+<div *ngSwitchDefault>Hence it is invalid number</div>
+</div>
+
+<p *ngFor ="let item of name | keyvalue"> {{item.key}} </p>
+
+<!-- <p appCustom>Highlighting the text using custom directives</p> -->

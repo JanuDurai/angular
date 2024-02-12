@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./directive.component.css']
 })
 export class DirectiveComponent {
+  name = {
+    firstName: "Janu",
+    lastName: "Shree"
+  }
 
   classes = {};
   styles = {};
@@ -25,6 +29,16 @@ export class DirectiveComponent {
   classname2 = "text"
   condition = true
   // condition = false
+  // show=true;
+  show = false;
+  items = [{ name: "janu", dept: "eee" },
+  { name: "vinu", dept: "cse" },
+  { name: "sume", dept: "it" }]
+
+  arrayItems = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  // day = 3;
+  day = 8;
+
 
   constructor() {
     this.setClasses();
@@ -50,6 +64,8 @@ export class DirectiveComponent {
   // changeToUppercase(event:any){
   //    this.bindingproperty =  event.target.value;
   // }
-
+  trackByIndex(index: number, num: any) {
+    return num.id;
+  }
 
 }

@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { NoneComponent } from '../none/none.component';
-import { EncapComponent } from '../encap/encap.component';
+// import { NoneComponent } from '../none/none.component';
+// import { EncapComponent } from '../encap/encap.component';
 
 @Component({
   selector: 'app-emulated',
