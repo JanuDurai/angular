@@ -62,12 +62,23 @@
 
 <img [attr.src]="imgUrl" alt="">
 
+<p [attr.class]="classname" [attr.font-weight]="bold">Paragraph is bold </p>
+
+
+
 
 <h4>Class and style binding</h4>
 
-<p [attr.class]="classname" [attr.font-weight]="bold">Paragraph is bold </p>
+<p [class.paraclass]="classActive">Paragraph is displayed when class active variable is true </p>
+
+<h4>Binding multiple class</h4>
+
+<p [ngClass]="{'class1': classActive, 'class2' : anotherclassActive}">Binding multiple classes to a single element </p>
 
 <p [style.color]="color">Paragraph is green</p>
+
+<p [style.background-color]="backgroundcolor">Style binding - backgroundcolor is {{backgroundcolor}}</p>
+
 
 <h4>Event binding</h4>
 
@@ -137,7 +148,7 @@
 <h5>Custom pipes</h5>
 <p>{{ feet | custompipe : "inches"}}</p>
 
-<p>Default parameter to pipes</p>
-<p>{{feet | custompipe }}</p>
+<h5>Default parameter to pipes</h5>
+<p>{{feet | custompipe }}</p>  
 
 <img [src] =' url | imgUrl: "./assets/default-img.jpg" ' alt="" />

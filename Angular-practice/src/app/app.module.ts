@@ -23,6 +23,7 @@ import { DatePipe } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
 import { CustompipePipe } from './custompipe.pipe';
 import { ImgUrlPipe } from './img-url.pipe';
+import { DirectiveComponent } from './directives/directive/directive.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ImgUrlPipe } from './img-url.pipe';
     ConditionalProjectionComponent,
     TemplateComponent,
     CustompipePipe,
-    ImgUrlPipe
+    ImgUrlPipe,
+    DirectiveComponent
   ],
   imports: [
     BrowserModule,

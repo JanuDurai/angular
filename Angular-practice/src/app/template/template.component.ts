@@ -33,7 +33,13 @@ export class TemplateComponent {
   url="";
   // url="../assets/cat.jpg";
 
-  
+  classActive=true;
+  // classActive =false;
+
+  anotherclassActive=true;
+  // anotherclassActive=false;
+  backgroundcolor="purple";
+  displayinline="inline";
 
 
   functionInterpolation() {

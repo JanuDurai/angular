@@ -9,3 +9,20 @@ img{
     height:200px;
     border: 20px solid gray;
 }
+
+.paraclass{
+    color:darkblue;
+    text-decoration-line: underline;
+}
+
+.class1{
+    color:red;
+    text-decoration-line: underline;
+    text-decoration-color: darkcyan;
+
+}
+
+.class2{
+    color:cadetblue;
+    text-decoration-line: overline;
+}
