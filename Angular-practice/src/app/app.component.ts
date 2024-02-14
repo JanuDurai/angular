@@ -1,5 +1,6 @@
 import { Component, DestroyRef, OnDestroy, inject, InputDecorator, OnChanges, SimpleChanges } from '@angular/core';
-import { userData } from './constants/table.constant';
+import { userData } from './practice/constants/table.constant';
+
 // import { HookMethodsComponent } from './hook-methods/hook-methods.component';
 // import { EncapsulationComponent } from './encapsulation/encapsulation.component';
 // // import { NgOptimizedImage } from '@angular/common';
@@ -10,11 +11,12 @@ import { userData } from './constants/table.constant';
   styleUrls: ['./app.component.css'],
   // imports:[HookMethodsComponent,EncapsulationComponent]
 
+
 })
 
-export class AppComponent {
+export class AppComponent {//
 
-  data = userData //TODO: pass this as input to table component
+  data = userData  //TODO: pass this as input to table component
   //TODO: create a function that will console.log the data of the specific row that was clicked
 
   title = 'Angular-practice';
@@ -46,5 +48,6 @@ export class AppComponent {
   isDestroy() {
     this.destroy = !this.destroy;
   }
+  collection: string[] = ['afghj', 'bdfghjk', 'cdfghjkl', 'd'];
 
 }

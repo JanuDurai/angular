@@ -35,6 +35,8 @@ export class TemplateComponent {
   url="";
   // url="../assets/cat.jpg";
 
+  stringArray=["this ","is","string","array"];
+
   classActive=true;
   // classActive =false;
 
@@ -88,12 +90,11 @@ export class TemplateComponent {
 
   }
 
-
   onchangeText(event: any) {
     this.twowaybinding = event.target.text;
   }
 
-
+ 
 
 }
 

@@ -1,0 +1,16 @@
+<p>User data table </p>
+
+<table mat-table>
+ <thead>
+ </thead>
+<tbody>
+    <tr><th *ngFor="let item of userData[0] | keyvalue ">{{item.key}}</th> </tr>
+    
+    <tr *ngFor="let obj of userData">
+        <td *ngFor="let item of obj | keyvalue" (hover)="displaytablecontent($event)">{{item.value}}</td>
+    </tr>
+
+
+</tbody>
+
+</table>
