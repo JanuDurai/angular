@@ -10,3 +10,21 @@ p{
     font-size: xx-large;
 }
 
+a{
+    display: block;
+    width: 200px;
+    height:60px;
+    border: 2px solid cadetblue;
+    background-color: cadetblue;
+    color: azure;
+    padding:30px 100px;
+    /* margin: 30px 50px; */
+}
+
+
+.active{
+    background-color: aliceblue;
+    color: cadetblue;
+    border: 2px solid cadetblue;
+    font-weight: bolder;
+ }

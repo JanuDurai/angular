@@ -48,6 +48,12 @@ export class AppComponent {//
   isDestroy() {
     this.destroy = !this.destroy;
   }
+
   collection: string[] = ['afghj', 'bdfghjk', 'cdfghjkl', 'd'];
+
+   dataDisplay(item){
+      console.log(item);
+   }
+
 
 }

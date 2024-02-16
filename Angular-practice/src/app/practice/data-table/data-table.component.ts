@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 
 @Component({
@@ -10,9 +10,15 @@ import { Component, Input } from '@angular/core';
 export class DataTableComponent {
 
 @Input() userData;
+@Output() tableData = new EventEmitter();
 
-displaytablecontent(event){
-          console.log(event.target.value);
+dataSent(event){
+     this.tableData.emit(event);
 }
+
+
+// displaytablecontent(event){
+//           console.log(event);
+// }
 
 }
