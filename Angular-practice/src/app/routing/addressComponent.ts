@@ -9,7 +9,7 @@ import { Component } from "@angular/core";
         border: 2px solid cadetblue;
         margin: 200px 30px;
         color: white;
-        background-color: rgb(107, 147, 148);
+        background-color: skyblue;
         padding-top: 400px;
         text-align:center; 
         font-size: xx-large;
