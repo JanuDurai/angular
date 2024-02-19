@@ -2,13 +2,19 @@
 
 <div>
     <!-- <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>     -->
-        <!-- root url  -->
+    <!-- root url  -->
 
-       
-            <a [routerLink]="['Home']" [queryParams]="{ page : 1, search:'HomeComponent'}"   routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Home</a> 
 
-            <!-- <a [routerLink]="['Home', 4567]" [queryParams]="{ page : 1, search:'HomeComponent'}" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" > Home</a>  -->
+    <a [routerLink]="['Home']" [queryParams]="{ page : 1, search:'HomeComponent'}" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">Home</a>
 
-            <a routerLink="About" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"  [queryParams]="{ page : 2, search:'AboutComponent'}">About</a> 
-    
-</div>   
+    <!-- <a [routerLink]="['Home', 4567]" [queryParams]="{ page : 1, search:'HomeComponent'}" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" > Home</a>  -->
+
+    <a routerLink="About" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"
+        [queryParams]="{ page : 2, search:'AboutComponent'}">About</a>
+
+        <a routerLink="Admin">
+            Admin
+        </a>
+
+</div>

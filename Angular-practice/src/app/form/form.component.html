@@ -1,0 +1,23 @@
+<h4>Reactive form</h4>
+
+
+<h5>User Data</h5>
+
+<label for="firstname">First Name: </label>
+<input type="text" [formControl]="firstname" />    
+
+<p> First Name: {{firstname.value}}</p>
+
+<h4>Template- driven form</h4>
+
+<h5>User Data</h5>
+<label for="lastname">Last Name:  </label>
+<input type="text" [(ngModel)]="lastname">
+
+<p>Last Name: {{lastname}}</p>
+
+
+<h5>Model to view </h5>
+
+<label for="color">Color: </label>
+<input type="text" [formControl]="color" />
