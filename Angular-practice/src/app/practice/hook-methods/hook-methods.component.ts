@@ -10,9 +10,10 @@ import { Component, OnChanges, OnDestroy, OnInit, Input, SimpleChanges } from '@
 
 export class HookMethodsComponent implements OnChanges, OnInit, OnDestroy {
 
-  @Input() data: string | undefined;
-  @Input() data2: string | undefined;
-  @Input() destroy: boolean | undefined
+  @Input() data: string;
+  @Input() data2: string;
+  @Input() destroy: boolean;
+
   //  valueChangeCheck: string;
   initCount: number = 0;
   changesCount: number = 0;
@@ -20,9 +21,8 @@ export class HookMethodsComponent implements OnChanges, OnInit, OnDestroy {
   constructor() {
     // this.valueChangeCheck="value1";
     // this.valueChangeCheck="value2"// Onchanges for this variable is not updated.
-    // this.data2=" In child class "
+    this.data2=" In child class "
   }
-
 
 
 
@@ -33,12 +33,13 @@ export class HookMethodsComponent implements OnChanges, OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.initCount++;
-
   }
-  
+
   ngOnDestroy(): void {
     console.log("element destroyed");
 
   }
 
 }
+
+

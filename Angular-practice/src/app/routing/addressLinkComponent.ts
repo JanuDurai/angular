@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 @Component({
     selector: `<app-address-link>`,
     // template : `<button routerLink="Address" routerLinkActive = "active" style="text-align: center"> Address </button> `,
-    template: `<button (click)="navToAddressPage()"> </button>`,
+    template: `<button (click)="navToAddressPage()"> Address</button>`,
     styles: [` a:hover{
         background-color: rgb(98, 194, 197);
         border: 2px solid black;
@@ -39,6 +39,6 @@ export class AddressLinkComponent {
     router: Router =inject(Router);
 
     navToAddressPage() {
-            this.router.v
+            this.router.navigate(['Address']);
     }
 }

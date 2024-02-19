@@ -1,17 +1,10 @@
 import { Component, DestroyRef, OnDestroy, inject, InputDecorator, OnChanges, SimpleChanges } from '@angular/core';
 import { userData } from './practice/constants/table.constant';
 
-// import { HookMethodsComponent } from './hook-methods/hook-methods.component';
-// import { EncapsulationComponent } from './encapsulation/encapsulation.component';
-// // import { NgOptimizedImage } from '@angular/common';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  // imports:[HookMethodsComponent,EncapsulationComponent]
-
-
 })
 
 export class AppComponent {//
@@ -23,9 +16,9 @@ export class AppComponent {//
   dynamicMessage: string = "Dynamically updated a value";
 
   contentUpdate = false;
-  disabledPropertyValue = "disabled";
+  disabledPropertyValue = false;
   buttonDynamicValue = "Click";
-  condition = false; //false;
+  condition = true; //false;
   listofItems = ["item1", "item2", "item3", "item4", "item5"];
   onchangeData = "initial initialisation";
   onchangecheckdata = "In parent classs";

@@ -34,6 +34,7 @@ import { AboutComponent } from './routing/about/about.component';
 import { PageNotFoundComponent } from './routing/pageNotFoundComponent';
 import { AddressComponent } from './routing/addressComponent';
 import { AddressLinkComponent } from './routing/addressLinkComponent';
+
 // import { RouterModule, Routes, RoutesRecognized } from '@angular/router';
 
 // const route:Routes=[{path:'About', component: AboutComponent},
@@ -69,7 +70,7 @@ import { AddressLinkComponent } from './routing/addressLinkComponent';
     AboutComponent,
     PageNotFoundComponent,
     AddressComponent,
-    AddressLinkComponent
+    AddressLinkComponent,
   ],
   imports: [
     BrowserModule,    
@@ -82,6 +83,9 @@ import { AddressLinkComponent } from './routing/addressLinkComponent';
   ],
   providers: [MaxOfNumService,SubmitButtonService],
   bootstrap: [AppComponent]
+  
 })
-export class AppModule { }
+export class AppModule { 
+
+}
 
