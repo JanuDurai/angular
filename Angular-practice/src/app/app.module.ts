@@ -80,6 +80,7 @@ import { AddressLinkComponent } from './routing/addressLinkComponent';
     CommonModule,
     // RouterModule,
     AppRoutingModule,
+
   ],
   providers: [MaxOfNumService,SubmitButtonService],
   bootstrap: [AppComponent]

@@ -5,11 +5,10 @@
         <!-- root url  -->
 
        
-            <a [routerLink]="'Home'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Home</a> 
-            <a routerLink="About" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">About</a> 
-        
+            <a [routerLink]="['Home']" [queryParams]="{ page : 1, search:'HomeComponent'}"   routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Home</a> 
 
+            <!-- <a [routerLink]="['Home', 4567]" [queryParams]="{ page : 1, search:'HomeComponent'}" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" > Home</a>  -->
 
-
+            <a routerLink="About" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"  [queryParams]="{ page : 2, search:'AboutComponent'}">About</a> 
     
 </div>   
