@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { NoneComponent } from '../none/none.component';
 
 
 @Component({

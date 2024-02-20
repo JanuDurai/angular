@@ -17,7 +17,6 @@ export class HookMethodsComponent implements OnChanges, OnInit, OnDestroy {
   @Input() onChangeCheckData;
   @Input() onInitData;
   initialisationCount = 0;
-  flip:boolean=true;
 
 
   constructor() {
@@ -40,10 +39,6 @@ export class HookMethodsComponent implements OnChanges, OnInit, OnDestroy {
       console.log(`NgOnDestroy - Para is destroyed`);
   }
 
-  toggleDestroy() {
-    this.flip = !this.flip;
-  }
-
-
+  
 
 }

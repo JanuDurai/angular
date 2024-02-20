@@ -9,3 +9,13 @@ p:nth-child(2) {
     height: 200px;
     
 } */
+
+
+:host ::ng-deep h1{
+    text-align: center;
+    font-style: italic;
+ }
+
+ :host{
+    display: block;
+ }

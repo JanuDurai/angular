@@ -4,7 +4,8 @@
 <p>string concatenation {{"Hello " + "World...!"}}</p>
 <p>{{"title"}}</p>
 
-<p>{{title + content}}</p>
+<p>{{title  + content}}</p>
+
 <p>{{title}} : {{ content}}</p>
 
 <p>{{title + " : " + content}} </p>
@@ -45,6 +46,7 @@
 
 <h4>Live binding check</h4>
 
+
 <p>previous value: {{value}} {{valchange()}} <br> current value: {{value}}</p>
 
 
@@ -61,10 +63,6 @@
 <h4>Attribute binding</h4>
 
 <img [attr.src]="imgUrl" alt="">
-
-<p [attr.class]="classname" [attr.font-weight]="bold">Paragraph is bold </p>
-
-
 
 
 <h4>Class and style binding</h4>
@@ -96,16 +94,15 @@
 <input [(ngModel)]="twowaybinding" /> <br /><br />
 <p> Input text: {{twowaybinding}} </p>
 
-<!-- <input [ngModel]="text" (ngModelChange)="twowaybinding = $event">
-<p>{{twowaybinding}}</p> -->
 
-
-<h2>Piping</h2>
+<h1>Piping</h1>
 
 <h5>Display date in format</h5>
-<p>{{birthday|date}}</p>
+
+<p>{{birthday | date}}</p>
 <h5>Today date and time</h5>
-<p>{{todaydatetime|date}}</p>
+
+<p>{{todaydatetime | date}}</p>
 <p>{{todaydatetime|date:'medium'}}</p>
 <p>{{todaydatetime|date:'full'}}</p>
 
@@ -133,7 +130,7 @@
 
 
 <h5>Chaining data and pipes</h5>
-<p>{{sampleString | slice : 3:5 | uppercase }}</p>
+<p>{{sampleString | slice : 2:5 | uppercase }}</p>
 <p>{{birthday |  date: 'MMMM yyyy dd hh:mm a' | uppercase }}</p>
 
 <h5>Pipes with condition</h5>
@@ -142,8 +139,8 @@
 </label>
 <p>{{(case.value=='lowercase'?  (string1 | lowercase) : case.value=='uppercase'? (string1 | uppercase): " ")}}</p>
 
-<p>{{1?string1:string2 | uppercase }}</p>
-<p>{{(1?string1:string2) | uppercase }}</p>
+<!-- <p>{{1?string1:string2 | uppercase }}</p>
+<p>{{(1?string1:string2) | uppercase }}</p> -->
 
 <h5>Custom pipes</h5>
 <p>{{ feet | custompipe : "inches"}}</p>
@@ -156,3 +153,16 @@
 
 <!-- <h3>List a array using pipe</h3>
 <p>{{stringArray | listToString}}</p> -->
+
+<p>Observable result</p>
+<ul>
+<li *ngFor="let o of obj">{{o.name}}</li>
+</ul>
+
+<h5>Async Pipe</h5>
+<p *ngFor="let o of obs$ | async">{{o.dept}}</p>
+
+
+<h5>Json Pipe</h5>
+
+<p>{{json | json}}</p>

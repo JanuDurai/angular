@@ -17,8 +17,6 @@ dataSent(event){
 }
 
 
-// displaytablecontent(event){
-//           console.log(event);
-// }
+
 
 }

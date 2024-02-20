@@ -1,6 +1,6 @@
-<h4>Attribute Directives</h4>
+<h2>Attribute Directives</h2>
 
-<h5>Ng Class with expression- condition</h5>
+<h5>Ng Class with expression - condition</h5>
 
 <p [ngClass]="classActiveCondition ? 'class1': '' ">If conditon is true paragraph background color is aqua</p>
 
@@ -11,7 +11,7 @@
 <p [ngClass]="{ first:true,  second:true}"> ng class object type </p>
 
 
-<h5>setting class name using expressions</h5>
+<h3>setting class name using expressions</h3>
 
 <p [ngClass]="classname1 + classname1">Text is bold</p>
 <p [ngClass]="classname1 + classname2">Text is large size</p>
@@ -22,18 +22,14 @@
 
 <h5>ngclass with functions</h5>
 
-<p [ngClass]="classes">Ng class with method </p>
+<p [ngClass]="classes">Ng class with classes </p>
 
 <h5>ngstyles with function</h5>
 
 <p [ngStyle]="styles">Ng styles with method</p>
 
-<!-- 
-<input type="text" [ngModel]="bindingproperty"  (ngModelChanges)="changeToUppercase($event)">
-<p>Bind:{{bindingproperty}}</p> -->
 
-
-<h3>Structural Directives</h3>
+<h2>Structural Directives</h2>
 
 <p *ngIf="condition">Condition is true </p>
 
@@ -53,12 +49,6 @@
 <ng-template #thenblock>Then block is displayed</ng-template>
 <ng-template #elseblock> Else block is displayed</ng-template>
 
-
-<h4>Storing value locally</h4>
-
-<div *ngIf="condition as value else elseblock">locally stored value is : {{value}}</div>
-<ng-template #elseblock>Else block</ng-template>
-
 <br><br>
 
 <button (click)="show=!show">{{show? "hide": "show"}}</button>
@@ -75,9 +65,9 @@
 
 <div *ngFor="let item of arrayItems; let i = index">index: {{i+1}} value: {{item}}</div>
 
-<h4>trackby</h4>
+<h4>array</h4>
 
-<div *ngFor="let item of arrayItems; trackby: trackByIndex">{{item}} </div>
+<div *ngFor="let item of arrayItems;">{{item}} </div>
 
 
 <h4>hosting directive without dom element</h4>
@@ -95,6 +85,10 @@
 <div *ngSwitchDefault>Hence it is invalid number</div>  
 </div>
 
-<p *ngFor ="let item of name | keyvalue"> {{item.key}} </p>
 
-<!-- <p appCustom>Highlighting the text using custom directives</p> -->
+
+<p *ngFor ="let item of name | keyvalue"> {{item.key}} {{item.value}}  </p>
+
+<h2>Custom Directive</h2>
+
+<p HighlightDirective>Highlighting the text using custom directives</p>

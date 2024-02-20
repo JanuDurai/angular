@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-// import { CustompipePipe } from '../custompipe.pipe';
-// import { Pipe } from '@angular/core';
-
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-template',
@@ -28,12 +26,16 @@ export class TemplateComponent {
   currencyvalue = 0.3567;
   number=3.34564789;
   sampleString="Vannila"
-
+  studentDetails: (number | string)[] = [];
   string1="string1 displayed in uppercase";
   string2="string2 displayed in uppercase";
   feet=4.578;
   url="";
   // url="../assets/cat.jpg";
+  array: number[] = [10, 20];
+  valueChange = false;
+  arrayChange = false;
+  value: string = "value not updated";
 
   stringArray=["this ","is","string","array"];
 
@@ -44,6 +46,12 @@ export class TemplateComponent {
   // anotherclassActive=false;
   backgroundcolor="purple";
   displayinline="inline";
+  obj=[];
+  obs$=of([{dept:'eee'},{dept:'ece'},{dept:'cse'}]);
+  obj$=of([{name:"janu"},{name:"shree"},{name:"durai"}]).subscribe((result)=>this.obj=result)
+
+  json={name: {firstname: "janu", lastname:"shree"}, dept:"eee"}
+
 
 
   functionInterpolation() {
@@ -54,11 +62,8 @@ export class TemplateComponent {
     return Math.max(num1, num2)
   }
 
-  studentDetails: (number | string)[] = [];
 
-  array: number[] = [10, 20];
-  valueChange = false;
-  arrayChange = false;
+ 
   Arraypush() {
     this.array.push(30);
     this.arrayChange = true;
@@ -69,7 +74,6 @@ export class TemplateComponent {
     this.studentDetails.push(stustd);
     this.valueChange = true;
   }
-  value: string = "value not updated";
 
   valchange() {
     setTimeout(() => this.value = "value updated", 3000)

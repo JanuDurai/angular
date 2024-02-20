@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-directive',
@@ -61,9 +61,6 @@ export class DirectiveComponent {
     }
   }
 
-  // changeToUppercase(event:any){
-  //    this.bindingproperty =  event.target.value;
-  // }
   trackByIndex(index: number, num: any) {
     return num.id;
   }

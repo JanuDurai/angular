@@ -5,19 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { AppComponent } from './app.component';
-import { ConditionalProjectionComponent } from './practice/content-projection/conditional-projection/conditional-projection.component';
-import { ContentProjectionComponent } from './practice/content-projection/content-projection.component';
 import { MultipleSlotComponent } from './practice/content-projection/multiple-slot/multiple-slot.component';
 import { SingleSlotComponent } from './practice/content-projection/single-slot/single-slot.component';
 import { CustompipePipe } from './practice/pipes/custompipe.pipe';
+import { ContentProjectionComponent } from './practice/content-projection/content-projection.component';
 import { DirectiveComponent } from './practice/directives/directive/directive.component';
 import { EmulatedComponent } from './practice/encapsulation/emulated/emulated.component';
 import { EncapComponent } from './practice/encapsulation/encap/encap.component';
-import { EncapsulationComponent } from './practice/encapsulation/encapsulation.component';
 import { NoneComponent } from './practice/encapsulation/none/none.component';
 import { HookMethodsComponent } from './practice/hook-methods/hook-methods.component';
 import { ImgUrlPipe } from './practice/pipes/img-url.pipe';
-import { InteractionComponent } from './practice/interaction/interaction.component';
 import { ChildComponentComponent } from './practice/interaction/parent-component/child-component/child-component.component';
 import { ParentComponentComponent } from './practice/interaction/parent-component/parent-component.component';
 import { TemplateComponent } from './practice/template/template.component';
@@ -36,7 +33,8 @@ import { AddressComponent } from './routing/addressComponent';
 import { AddressLinkComponent } from './routing/addressLinkComponent';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
+import { JsonPipe,AsyncPipe } from '@angular/common';
+import { CustomDirective } from './practice/directives/customdirective.directive';
 // import { RouterModule, Routes, RoutesRecognized } from '@angular/router';
 
 // const route:Routes=[{path:'About', component: AboutComponent},
@@ -47,17 +45,14 @@ import { JsonPipe } from '@angular/common';
   declarations: [
     AppComponent,
     HookMethodsComponent,
-    EncapsulationComponent,
     EmulatedComponent,
     NoneComponent,
     EncapComponent,
-    InteractionComponent,
     ParentComponentComponent,
     ChildComponentComponent,
-    ContentProjectionComponent,
     SingleSlotComponent,
     MultipleSlotComponent,
-    ConditionalProjectionComponent,
+    ContentProjectionComponent,
     TemplateComponent,
     CustompipePipe,
     ImgUrlPipe,
@@ -74,6 +69,8 @@ import { JsonPipe } from '@angular/common';
     AddressComponent,
     AddressLinkComponent,
     FormComponent,
+    CustomDirective,
+    
   ],
   imports: [
     BrowserModule,    
@@ -81,13 +78,14 @@ import { JsonPipe } from '@angular/common';
     DatePipe,
     CurrencyPipe,
     CommonModule,
-    // RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
     JsonPipe,
+    AsyncPipe,
+    
 
   ],
-  providers: [MaxOfNumService,SubmitButtonService],
+  // providers: [MaxOfNumService,SubmitButtonService],
   bootstrap: [AppComponent]
   
 })

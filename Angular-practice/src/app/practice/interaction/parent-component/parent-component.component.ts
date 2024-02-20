@@ -1,18 +1,16 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ChildComponentComponent } from './child-component/child-component.component';
-import { ChildActivationStart } from '@angular/router';
 
 @Component({
   selector: 'app-parent-component',
   templateUrl: './parent-component.component.html',
   styleUrls: ['./parent-component.component.css']
 })
+
 export class ParentComponentComponent implements AfterViewInit {
 
-  @ViewChild(ChildComponentComponent)
-  child: ChildComponentComponent;
-  constructor() { }
-
+  @ViewChild(ChildComponentComponent)child: ChildComponentComponent;
+  
   message: string;
   parentValue: string = "Value in Parent class";
 

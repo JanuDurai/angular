@@ -1,4 +1,6 @@
-import { Component, DestroyRef, OnDestroy, inject, InputDecorator, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+} from '@angular/core';
 import { userData } from './practice/constants/table.constant';
 
 @Component({
@@ -6,24 +8,24 @@ import { userData } from './practice/constants/table.constant';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+export class AppComponent {
+  //
 
-export class AppComponent {//
-
-  data = userData  //TODO: pass this as input to table component
+  data = userData; //TODO: pass this as input to table component
   //TODO: create a function that will console.log the data of the specific row that was clicked
 
   title = 'Angular-practice';
-  dynamicMessage: string = "Dynamically updated a value";
+  dynamicMessage: string = 'Dynamically updated a value';
 
   contentUpdate = false;
   disabledPropertyValue = false;
-  buttonDynamicValue = "Click";
+  buttonDynamicValue = 'Click';
   condition = true; //false;
-  listofItems = ["item1", "item2", "item3", "item4", "item5"];
-  dataToHookComp = "Onchanges-Value assigned in App Component";
-  onChangeCheckData = "OnChange Check Data";
+  listofItems = ['item1', 'item2', 'item3', 'item4', 'item5'];
+  dataToHookComp = 'Onchanges-Value assigned in App Component';
+  onChangeCheckData = 'OnChange Check Data';
   destroy: boolean = true;
-  onInitdata="OnInit- value initialised in App Component"
+  onInitdata = 'OnInit- value initialised in App Component';
 
   updateContent(Message: string) {
     this.dynamicMessage = Message;
@@ -32,11 +34,17 @@ export class AppComponent {//
     this.contentUpdate = true;
   }
   isbuttonClicked() {
-    this.buttonDynamicValue = "button Clicked";
+    this.buttonDynamicValue = 'button Clicked';
   }
   constructor() {
-    setTimeout(() => this.dataToHookComp= "Onchanges - Assigned value updated in App Component", 5000);
+    setTimeout(
+      () =>
+        (this.dataToHookComp =
+          'Onchanges - Assigned value updated in App Component'),
+      5000
+    );
   }
+  
 
   isDestroy() {
     this.destroy = !this.destroy;
@@ -44,5 +52,12 @@ export class AppComponent {//
 
   collection: string[] = ['afghj', 'bdfghjk', 'cdfghjkl', 'd'];
 
-
+  dataDisplay(event) {
+    console.log(event);
+  }
+  flip=true;
+  
+  toggleDestroy() {
+    this.flip = !this.flip;
+  }
 }

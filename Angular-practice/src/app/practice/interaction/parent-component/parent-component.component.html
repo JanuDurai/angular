@@ -2,23 +2,13 @@
 
 <p> Value interacted from child to parent: "{{message}}"</p>
 
-
-
-
 <app-child-component [childvalue]="parentValue" [name1]="names[0]"
   (NewItemEvent)="addItem($event)">
 
   <ul items>
     <li *ngFor="let item of items">{{item}}</li>
   </ul>
-  
-
-
 </app-child-component>
-  
-
- 
-
 
 
 <div>
@@ -28,6 +18,3 @@
     </li>
   </ul>
 </div>
-
-
-
