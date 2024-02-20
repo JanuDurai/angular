@@ -20,9 +20,10 @@ export class AppComponent {//
   buttonDynamicValue = "Click";
   condition = true; //false;
   listofItems = ["item1", "item2", "item3", "item4", "item5"];
-  onchangeData = "initial initialisation";
-  onchangecheckdata = "In parent classs";
+  dataToHookComp = "Onchanges-Value assigned in App Component";
+  onChangeCheckData = "OnChange Check Data";
   destroy: boolean = true;
+  onInitdata="OnInit- value initialised in App Component"
 
   updateContent(Message: string) {
     this.dynamicMessage = Message;
@@ -34,8 +35,7 @@ export class AppComponent {//
     this.buttonDynamicValue = "button Clicked";
   }
   constructor() {
-    setTimeout(() => this.onchangeData = "Final value updated", 5000);
-    // this.onchangecheckdata="In parent classs constructor value changed"
+    setTimeout(() => this.dataToHookComp= "Onchanges - Assigned value updated in App Component", 5000);
   }
 
   isDestroy() {
@@ -43,10 +43,6 @@ export class AppComponent {//
   }
 
   collection: string[] = ['afghj', 'bdfghjk', 'cdfghjkl', 'd'];
-
-   dataDisplay(item){
-      console.log(item);
-   }
 
 
 }

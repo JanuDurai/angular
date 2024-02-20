@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
-    title: 'Admin',
+    title: 'Admin',               
     canLoad: [CanActiveGuard],
     children: [
       { path: 'User', component: UserComponent },

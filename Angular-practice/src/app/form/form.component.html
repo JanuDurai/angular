@@ -1,23 +1,157 @@
 <h4>Reactive form</h4>
 
-
 <h5>User Data</h5>
 
 <label for="firstname">First Name: </label>
-<input type="text" [formControl]="firstname" />    
+<input type="text" [formControl]="firstname" />
 
-<p> First Name: {{firstname.value}}</p>
+<p>First Name: {{ firstname.value }}</p>
+
+<h5>Model to view</h5>
+
+<label for="color">Color: </label>
+<input type="text" [formControl]="color" (click)="colorChange()" />
+
+<p>Color: {{ color.value }}</p>
 
 <h4>Template- driven form</h4>
 
 <h5>User Data</h5>
-<label for="lastname">Last Name:  </label>
-<input type="text" [(ngModel)]="lastname">
+<label for="lastname">Last Name: </label>
+<input type="text" [(ngModel)]="lastname" />
 
-<p>Last Name: {{lastname}}</p>
+<p>Last Name: {{ lastname }}</p>
+
+<h5>Model to view</h5>
+
+<label for="">Age: </label>
+<input type="number" [(ngModel)]="age" (click)="valueChange()" />
+
+<p>Age: {{ age }}</p>
+
+<h4>Form Groups</h4>
+
+<form [formGroup]="UserProfileData" (ngSubmit)="dataDisplay()">
+  <label>First Name: </label>
+  <input type="text" formControlName="userfirstname" />
+  <br />
+
+  <label>Last Name: </label>
+  <input type="text" formControlName="userlastname" />
+  <br />
+
+  <label>Age: </label>
+  <input type="number" formControlName="userage" />
+  <br />
+
+  <label>Email: </label>
+  <input type="email" formControlName="useremail" />
+  <br />
+
+  <button>Submit</button>
+</form>
+
+<br />
+
+<p *ngIf="submitted">{{ UserProfileData.value | json }}</p>
+
+<h4>Nested Form Groups</h4>
+
+<form [formGroup]="ProfileDataAddress" (ngSubmit)="AddressDataDisplay()">
+  <label>First Name: </label>
+  <input type="text" formControlName="userfirstname" />
+  <br />
+
+  <label>Last Name: </label>
+  <input type="text" formControlName="userlastname" />
+  <br />
+
+  <label>Age: </label>
+  <input type="number" formControlName="userage" />
+  <br />
+
+  <label>Email: </label>
+  <input type="email" formControlName="useremail" />
+  <br />
+  <label>Address: </label>
+  <div formGroupName="userAddress">
+    <label>Door No: </label>
+    <input type="text" formControlName="Doorno" />
+    <br />
+
+    <label>Streetname: </label>
+    <input type="text" formControlName="Streetname" />
+    <br />
+
+    <label>Landmark: </label>
+    <input type="text" formControlName="Landmark" />
+    <br />
+
+    <label>City: </label>
+    <input type="text" formControlName="City" />
+    <br />
+  </div>
+
+  <button>Submit</button>
+</form>
+
+<p *ngIf="addressSubmitted">{{ ProfileDataAddress.value | json }}</p>
+<br />
+
+<h4>Form Array</h4>
+
+<form [formGroup]="ProfileDataArray">
+  <label> Name: </label>
+  <input type="text" formControlName="user2name" />
+  <br />
+
+  <label>Dept: </label>
+  <input type="text" formControlName="user2dept" />
+  <br />
+
+  <div fromArrayName="address">
+    <!-- <div *ngFor="let add of ProfileDataAddress.get('address').controls; index as i">
+    <input type="text" formControlName="{{i}}">
+   </div> -->
+  </div>
+</form>
+
+<h4>Form builder</h4>
+
+<form [formGroup]="formBuilderData" (ngSubmit)="formBuilderDataDisplay()">
+  <label>Name: </label>
+  <input type="text" formControlName="user3name" />
+
+  <label>Dept: </label>
+  <input type="text" formControlName="user3dept" />
+  <button>Submit</button>
+</form>
+
+<p *ngIf="formbuilder">{{ formBuilderData.value | json }}</p>
+
+<h4>Input validations - Template driven form</h4>
+
+  <input type="text" required minlength="4" [(ngModel)]="input" #name="ngModel"/>
+
+  <div *ngIf="name.invalid && (name.dirty || name.touched)">
+    <div *ngIf="name.errors?.['required']">Name is required </div>
+    <div *ngIf="name.errors?.['minlength']">Name must be atleast 4 characters </div>
+  </div>
+
+  <h4>Input validations - Reactive form</h4>
+
+  <form [formGroup]="validateForm">
+   <label> Name</label >
+   <input type="text" formControlName="validateName" >
+
+   <label>Dept</label>
+   <input type="text" formControlName="validatedept">
+
+   <div *ngIf="validateName.invalid && (validateName.dirty || validateName.touched)">
+    <div *ngIf="validateName.errors?.['required']">Name is required </div>
+    <div *ngIf="validateName.errors?.['minlength']">Name must be atleast 4 characters </div>
+  </div>
 
 
-<h5>Model to view </h5>
+  </form>
 
-<label for="color">Color: </label>
-<input type="text" [formControl]="color" />

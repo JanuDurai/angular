@@ -36,6 +36,7 @@ import { AddressComponent } from './routing/addressComponent';
 import { AddressLinkComponent } from './routing/addressLinkComponent';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
 // import { RouterModule, Routes, RoutesRecognized } from '@angular/router';
 
 // const route:Routes=[{path:'About', component: AboutComponent},
@@ -83,6 +84,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     // RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    JsonPipe,
 
   ],
   providers: [MaxOfNumService,SubmitButtonService],

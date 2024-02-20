@@ -1,16 +1,16 @@
-<p *ngIf="destroy">Content is visible</p>
-<h2>ngOnChanges</h2>
+<h4>ngOnChanges</h4>
 
-<p> Changes count: {{changesCount}}</p>
-<p>Data : {{data}}</p>
+<p>{{dataFromAppComp}}</p>
 
-<p>Changescount: {{changesCount}}</p>
-<p> Data2: {{data2}}</p>
+<p>{{dataChangeProperty()}}</p>
 
-<h2>ngOnInit</h2>
-<p>initCount: {{initCount}}</p>
+<h4>NgOnInit</h4>
 
-<h2>ngOnDestroy</h2>
+<h4>NgOnDestroy</h4>
+
+<button (click)="toggleDestroy()">Click</button>
+<p *ngIf='flip'>when button clicked and para is destroyed</p>
+
 
 
 

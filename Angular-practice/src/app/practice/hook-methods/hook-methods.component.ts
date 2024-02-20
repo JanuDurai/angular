@@ -1,45 +1,49 @@
-import { Component, OnChanges, OnDestroy, OnInit, Input, SimpleChanges } from '@angular/core';
-
+import {
+  Component,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Input,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
-  // standalone:true,
   selector: 'app-hook-methods',
   templateUrl: './hook-methods.component.html',
   styleUrls: [`./hook-methods.component.css`],
 })
-
 export class HookMethodsComponent implements OnChanges, OnInit, OnDestroy {
+  @Input() dataFromAppComp;
+  @Input() onChangeCheckData;
+  @Input() onInitData;
+  initialisationCount = 0;
+  flip:boolean=true;
 
-  @Input() data: string;
-  @Input() data2: string;
-  @Input() destroy: boolean;
-
-  //  valueChangeCheck: string;
-  initCount: number = 0;
-  changesCount: number = 0;
 
   constructor() {
-    // this.valueChangeCheck="value1";
-    // this.valueChangeCheck="value2"// Onchanges for this variable is not updated.
-    this.data2=" In child class "
+    this.onInitData = 'Value initialised in constructor';
   }
 
-
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes['data']);
-    this.changesCount++;
+  dataChangeProperty() {
+    this.dataFromAppComp = 'Value updated in Hook Component';
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(`ngOnchange Invoked `, changes);
+  }
   ngOnInit(): void {
-    this.initCount++;
+    console.log(
+      'NgOnInit invoked and the count is ',
+      ++this.initialisationCount);
   }
-
   ngOnDestroy(): void {
-    console.log("element destroyed");
-
+      console.log(`NgOnDestroy - Para is destroyed`);
   }
+
+  toggleDestroy() {
+    this.flip = !this.flip;
+  }
+
+
 
 }
-
-

@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'About', component: AboutComponent, title: 'About', canActivate: [CanActiveGuard] },
   { path: 'Home', component: HomeComponent, title: 'Home' },
   { path: "Address", component: AddressComponent, title: 'Address' },
-  { path: 'Admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivateChild: [CanActiveGuard] },
+  { path: ' ', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivateChild: [CanActiveGuard] },
   // {path:'Home/:id',  component: HomeComponent,title:'Home'}, //PathMatch
   // {path:'', redirectTo:'Home/:id',pathMatch:'full'},
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
