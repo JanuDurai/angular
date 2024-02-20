@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup, FormBuilder, NgModel, Validators } from '@angular/forms';
-
+import { Component} from '@angular/core';
+import { FormArray, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { checkemail } from './customvalidator';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -22,6 +22,7 @@ export class FormComponent {
   name;
 
   constructor(private form: FormBuilder) {}
+
 
   colorChange() {
     this.color.setValue('Red');
@@ -82,8 +83,12 @@ export class FormComponent {
   }
   
    validateForm= new FormGroup({
-     validateName: new FormControl('this.validateName',[Validators.required, Validators.minLength(4)]),
-     validatedept: new FormControl('this.validatedept', [Validators.required, Validators.minLength(3)])
+     validateName: new FormControl('',[Validators.required, Validators.minLength(4)]),
+     validatedept: new FormControl('', [Validators.required, Validators.minLength(3)])
+   })
+
+   customValidateGroup = this.form.group({
+     customemail: ['',[Validators.required,checkemail]]
    })
 
 }
