@@ -83,6 +83,6 @@ export class FormComponent {
   }
   
    validateForm= new FormGroup({
-     validateName: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
+     validateName: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10),Validators.pattern(/[a-z A-Z]/)]),
    })
 }

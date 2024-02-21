@@ -158,6 +158,8 @@
    <div *ngIf="validateForm.get('validateName').invalid && (validateForm.get('validateName').dirty || validateForm.get('validateName').touched)">
     <div *ngIf="validateForm.get('validateName').errors?.['required']">Name is required </div>
     <div *ngIf="validateForm.get('validateName').errors?.['minlength']">Name must be atleast 4 characters </div>
+    <div *ngIf="validateForm.get('validateName').errors?.['maxlength']">Name must be atmost 10 characters </div>
+    <div *ngIf="validateForm.get('validateName').errors?.['pattern']">Numbers are invalid</div>
   </div>
   </form>
 
