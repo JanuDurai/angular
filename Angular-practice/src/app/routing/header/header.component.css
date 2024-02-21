@@ -17,11 +17,11 @@ a:hover{
 }
 
 a{
-    display: block;
+    display: flex;
     width: 100px;
     height:50px;
     border: 2px solid cadetblue;
-    float:right;
+    float:inline-end;
     background-color: cadetblue;
     color: azure;
     margin: 30px 100px;

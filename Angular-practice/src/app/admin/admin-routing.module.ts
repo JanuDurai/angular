@@ -4,13 +4,16 @@ import { AdminComponent } from './admin/admin.component';
 import { CanActiveGuard } from './can-active.guard';
 import { UserComponent } from './user/user.component';
 import { DummyComponent } from './admin/dummy/dummy.component';
+import { canDeactivateGuard } from './can-deactivate.guard';
+
+
 
 const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
     title: 'Admin',               
-    canLoad: [CanActiveGuard],
+    canActivate: [CanActiveGuard],
     children: [
       { path: 'User', component: UserComponent },
       {

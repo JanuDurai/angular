@@ -108,9 +108,9 @@
   <label>Dept: </label>
   <input type="text" formControlName="user2dept" />
   <br />
-  <div fromArrayName="address">
-    <!-- <div *ngFor="let add of ProfileDataArray.get('address').controls; index as i">
-    <input type="text" formControlName="{{i}}">
+  <div formArrayName="address">
+    <!-- <div *ngFor="let add of ProfileDataArray.get('address') ">
+    <input type="text" formControlName="{{add.value}}">
    </div> -->
   </div>
 </form>
@@ -154,17 +154,7 @@
 
 
 
-  <!-- <h4>custom validator</h4>
-
-  <form [formGroup]="customValidateGroup">
-   <input type="text" formControlName="customemail">
-   <div *ngIf="customValidateGroup.get('customemail').invalid">
-
-<div *ngIf="customValidateGroup.get('customemail').errors?.['checkmail']">Enter valid email id</div>
-   </div>
-  </form> -->
-
-
+ 
 
 
 

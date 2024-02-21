@@ -34,6 +34,12 @@ import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JsonPipe,AsyncPipe } from '@angular/common';
 import { CustomDirective } from './practice/directives/customdirective.directive';
+import { FormNavigateComponent } from './routing/form-navigate/form-navigate.component';
+import { HttpClientComponent } from './http-client/http-client.component';
+import { AdminModule } from './admin/admin.module';
+import { HttpModuleModule } from './http-client/http-module.module';
+import { HttpClientModule } from '@angular/common/http';
+
 // import { RouterModule, Routes, RoutesRecognized } from '@angular/router';
 
 // const route:Routes=[{path:'About', component: AboutComponent},
@@ -68,6 +74,8 @@ import { CustomDirective } from './practice/directives/customdirective.directive
     AddressLinkComponent,
     FormComponent,
     CustomDirective,
+    FormNavigateComponent,
+    HttpClientComponent,
     
   ],
   imports: [
@@ -80,7 +88,9 @@ import { CustomDirective } from './practice/directives/customdirective.directive
     ReactiveFormsModule,
     JsonPipe,
     AsyncPipe,
-    
+    AdminModule,
+    HttpModuleModule,
+    HttpClientModule,
 
   ],
   providers: [MaxOfNumService,SubmitButtonService],

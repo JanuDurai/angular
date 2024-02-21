@@ -1,12 +1,13 @@
 import { Component} from '@angular/core';
 import { FormArray, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { checkemail } from './customvalidator';
+import { confirmPasswordValidator } from './customvalidator';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
+
   firstname = new FormControl('');
 
   lastname = '';
@@ -83,12 +84,10 @@ export class FormComponent {
   }
   
    validateForm= new FormGroup({
-     validateName: new FormControl('',[Validators.required, Validators.minLength(4)]),
-     validatedept: new FormControl('', [Validators.required, Validators.minLength(3)])
+     validateName: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
+     validatedept: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(4)])
    })
 
-   customValidateGroup = this.form.group({
-     customemail: ['',[Validators.required,checkemail]]
-   })
 
+ 
 }

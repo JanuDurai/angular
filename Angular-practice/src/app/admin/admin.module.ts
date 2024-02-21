@@ -11,11 +11,13 @@ import { DummyComponent } from './admin/dummy/dummy.component';
   declarations: [
     AdminComponent,
     UserComponent,
-    DummyComponent
+    DummyComponent,
+    
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+
   ]
 })
 export class AdminModule { }
