@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { FormArray, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { confirmPasswordValidator } from './customvalidator';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -73,10 +72,10 @@ export class FormComponent {
   formBuilderData = this.form.group({
      user3name: [''],
      user3dept:[''],
-    //  user3address: this.form.group({
-    //     user3doorno:[''],
-    //     user3city:[''],
-    //  })
+     user3address: this.form.group({
+        user3doorno:[''],
+        user3city:[''],
+     })
   });
 
   formBuilderDataDisplay(){
@@ -85,9 +84,5 @@ export class FormComponent {
   
    validateForm= new FormGroup({
      validateName: new FormControl('',[Validators.required, Validators.minLength(4),Validators.maxLength(10)]),
-     validatedept: new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(4)])
    })
-
-
- 
 }

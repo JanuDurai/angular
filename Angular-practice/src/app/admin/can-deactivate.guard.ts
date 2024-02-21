@@ -5,7 +5,7 @@ interface DeactivateInterface{
 }
 
 export const canDeactivateGuard: CanDeactivateFn<unknown> = (component, currentRoute, currentState, nextState) => {
-  return false;
-  //return true;
+  // return false;
+  return true;
 
 };

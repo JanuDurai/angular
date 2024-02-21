@@ -123,7 +123,17 @@
 
   <label>Dept: </label>
   <input type="text" formControlName="user3dept" />
+
+  <div formGroupName="user3address">
+    <label>Door No: </label>
+  <input type="text" formControlName="user3doorno" />
+
+  <label>City: </label>
+  <input type="text" formControlName="user3city" />
+
+  </div>
   <button>Submit</button>
+
 </form>
 
 <p *ngIf="formbuilder">{{ formBuilderData.value | json }}</p>
@@ -143,8 +153,7 @@
    <label> Name</label >
    <input type="text" formControlName="validateName" >
 
-   <label>Dept</label>
-   <input type="text" formControlName="validatedept">
+   
 
    <div *ngIf="validateForm.get('validateName').invalid && (validateForm.get('validateName').dirty || validateForm.get('validateName').touched)">
     <div *ngIf="validateForm.get('validateName').errors?.['required']">Name is required </div>
