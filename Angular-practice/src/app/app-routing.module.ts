@@ -7,12 +7,14 @@ import { AddressComponent } from './routing/addressComponent';
 import { CanActiveGuard } from './admin/can-active.guard';
 
 const routes: Routes = [
-  { path: 'About', component: AboutComponent, title: 'About', canActivate: [CanActiveGuard] },
+  { path: 'About', component: AboutComponent, title: 'About', canActivate: [CanActiveGuard]},
+  { path: 'About', title: 'Home', 
+     children:[{path:"Home", component: HomeComponent}] },
   { path: 'Home', component: HomeComponent, title: 'Home' },
   { path: "Address", component: AddressComponent, title: 'Address' },
-  { path: ' ', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivateChild: [CanActiveGuard] },
+  { path: 'Admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivateChild: [CanActiveGuard] },
   // {path:'Home/:id',  component: HomeComponent,title:'Home'}, //PathMatch
-  // {path:'', redirectTo:'Home/:id',pathMatch:'full'},
+  {path:'', redirectTo:'Home/:id',pathMatch:'full'},
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
   // {path:'', component: HomeComponent},
   { path: '**', component: PageNotFoundComponent, title: 'PageNotFound' }];

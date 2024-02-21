@@ -20,7 +20,6 @@ import { ParentComponentComponent } from './practice/interaction/parent-componen
 import { TemplateComponent } from './practice/template/template.component';
 import { DataTableComponent } from './practice/data-table/data-table.component';
 import { File1Component } from './practice/dependencyinjection/file1/file1.component';
-import { File2Component } from './practice/dependencyinjection/file2/file2.component';
 import { MaxOfNumService } from './practice/services/max-of-num.service';
 import { SubmitButtonService } from './practice/services/submit-button.service';
 import { MainComponent } from './routing/main/main.component';
@@ -59,7 +58,6 @@ import { CustomDirective } from './practice/directives/customdirective.directive
     DirectiveComponent,
     DataTableComponent,
     File1Component,
-    File2Component,
     MainComponent,
     HeaderComponent,
     FooterComponent,
@@ -85,7 +83,7 @@ import { CustomDirective } from './practice/directives/customdirective.directive
     
 
   ],
-  // providers: [MaxOfNumService,SubmitButtonService],
+  providers: [MaxOfNumService,SubmitButtonService],
   bootstrap: [AppComponent]
   
 })

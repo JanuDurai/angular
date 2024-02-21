@@ -9,8 +9,7 @@ export class SubmitButtonService {
 
 
 constructor(private maxservice:MaxOfNumService){
-
-}
+}   
   alertmessage(filename) {
     alert(filename + " - Thank you submitting the form");
   }
