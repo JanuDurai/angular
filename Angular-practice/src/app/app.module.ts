@@ -22,23 +22,24 @@ import { DataTableComponent } from './practice/data-table/data-table.component';
 import { File1Component } from './practice/dependencyinjection/file1/file1.component';
 import { MaxOfNumService } from './practice/services/max-of-num.service';
 import { SubmitButtonService } from './practice/services/submit-button.service';
-import { MainComponent } from './routing/main/main.component';
-import { HeaderComponent } from './routing/header/header.component';
-import { FooterComponent } from './routing/footer/footer.component';
-import { HomeComponent } from './routing/home/home.component';
-import { AboutComponent } from './routing/about/about.component';
-import { PageNotFoundComponent } from './routing/pageNotFoundComponent';
-import { AddressComponent } from './routing/addressComponent';
-import { AddressLinkComponent } from './routing/addressLinkComponent';
-import { FormComponent } from './form/form.component';
+import { MainComponent } from './practice/routing/main/main.component';
+import { HeaderComponent } from './practice/routing/header/header.component';
+import { FooterComponent } from './practice/routing/footer/footer.component';
+import { HomeComponent } from './practice/routing/home/home.component';
+import { AboutComponent } from './practice/routing/about/about.component';
+import { PageNotFoundComponent } from './practice/routing/pageNotFoundComponent';
+import { AddressComponent } from './practice/routing/addressComponent';
+import { AddressLinkComponent } from './practice/routing/addressLinkComponent';
+import { FormComponent } from './practice/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JsonPipe,AsyncPipe } from '@angular/common';
 import { CustomDirective } from './practice/directives/customdirective.directive';
-import { FormNavigateComponent } from './routing/form-navigate/form-navigate.component';
-import { HttpClientComponent } from './http-client/http-client.component';
-import { AdminModule } from './admin/admin.module';
-import { HttpModuleModule } from './http-client/http-module.module';
+import { FormNavigateComponent } from './practice/routing/form-navigate/form-navigate.component';
+import { HttpClientComponent } from './practice/http-client/http-client.component';
+import { AdminModule } from './practice/admin/admin.module';
+import { HttpModuleModule } from './practice/http-client/http-module.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ObservableComponent } from './practice/http-client/observable.component';
 
 // import { RouterModule, Routes, RoutesRecognized } from '@angular/router';
 
@@ -76,6 +77,7 @@ import { HttpClientModule } from '@angular/common/http';
     CustomDirective,
     FormNavigateComponent,
     HttpClientComponent,
+    ObservableComponent,
     
   ],
   imports: [

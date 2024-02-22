@@ -9,7 +9,7 @@ import { userData } from './practice/constants/table.constant';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  //
+  
 
   data = userData; //TODO: pass this as input to table component
   //TODO: create a function that will console.log the data of the specific row that was clicked
