@@ -8,12 +8,14 @@ import { of } from "rxjs";
 })
 
 export class ObservableComponent{
-     serverResponse$=of(1,2,3,4,5,6);
+     serverResponse$=of({});
      constructor(){
            this.serverResponse$.subscribe();
            this.serverResponse$.subscribe(data => console.log(data));
 
-           this.serverResponse$.subscribe({next: value =>console.log(`next value: `,value) })
+           this.serverResponse$.subscribe({next: value =>console.log(`next value: `,value),
+                                           error: err => console.log(`observable error`, err),
+                                           complete:() => console.log(`observable status: completed`)});
      }
 
 
