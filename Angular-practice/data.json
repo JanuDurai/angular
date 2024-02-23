@@ -1,0 +1,21 @@
+{
+"detail" : [{
+    "id": 1,
+    "first_name": "Imogen",
+    "last_name": "Denning",
+    "email": "idenning0@tmall.com",
+    "gender": "Polygender"
+  }, {
+    "id": 2,
+    "first_name": "Teena",
+    "last_name": "Jeyes",
+    "email": "tjeyes1@ask.com",
+    "gender": "Female"
+  }, {
+    "id": 3,
+    "first_name": "Zed",
+    "last_name": "Houldey",
+    "email": "zhouldey2@washingtonpost.com",
+    "gender": "Male"
+  }]
+}
