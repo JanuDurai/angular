@@ -5,15 +5,15 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { LoginComponent } from './component/login.component';
 import { RegisterComponent } from './component/register.component';
 
-
 @NgModule({
   declarations: [
+    LoginComponent,
     RegisterComponent,
-    LoginComponent
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
-  ]
+    PagesRoutingModule,
+  ],
+  exports:[RegisterComponent,LoginComponent]
 })
 export class PagesModule { }

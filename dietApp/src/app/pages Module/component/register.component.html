@@ -1,8 +1,42 @@
-<form action="getFromUser">
-    
+<form formGroup ="Data" onsubmit="DataTransfer()">
+<label for="">Register</label>
+<label for="">FirstName</label>
+<input type="text" formControlName="userfirstname">
 
+<label for="">LastName</label>
+<input type="text" formControlName="userlastname">
 
+<label for="">Age</label>
+<input type="number" formControlName="userage">
 
+<label for="">Height</label>
+<input type="number" formControlName="userheight">
 
+<label for="">Current Weight</label>
+<input type="number" formControlName="userweight">
 
+<label for="">Target Weight</label>
+<input type="number" formControlName="usertargetweight">
+
+<label for="">Choice</label>
+<select name="choice" formControlName="userchoice">--Please choose an option 
+    <option value="choice">Weight Gain</option>
+    <option value="choice">Weight Loss</option>
+    <option value="choice">Maintain Weight</option>
+</select>
+
+<label for="">Days To Achieve</label>
+<input type="text" formControlName="userdaystoachieve">
+
+<label for="">Username</label>
+<input type="text" formControlName="userusername">
+
+<label for="">Password</label>
+<input type="text" formControlName="userpassword">
+
+<label for="">Confirm Password</label>
+<input type="text" formControlName="userconfirmpassword">
+
+<button>Submit</button>
 </form>
+

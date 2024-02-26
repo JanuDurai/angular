@@ -7,12 +7,14 @@ import { HeaderComponent } from './shared folder/component folder/header.compone
 import { FooterComponent } from './shared folder/component folder/footer.component';
 import { NavbarComponent } from './shared folder/component folder/navbar.component';
 import { PagesModule } from './pages Module/pages.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,
