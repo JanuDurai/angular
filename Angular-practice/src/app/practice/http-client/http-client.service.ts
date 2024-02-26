@@ -14,22 +14,27 @@ export class HttpClientService {
   }
 
   getUser(id: number) {
-      return this.httpReq.get(this.url +"?id=" + id);
-      
+    return this.httpReq.get(this.url + '?id=' + id);
   }
 
-  getUserData(id:number,gender:string){
-     return this.httpReq.get(this.url+ "?id=" + id + "&gender=" + gender );
+  getUserData(id: number, gender: string) {
+    return this.httpReq.get(this.url + '?id=' + id + '&gender=' + gender);
   }
 
   //post
-  addUser(){
-
+  addUser(userDetail) {
+    return this.httpReq.post(this.url, userDetail);
   }
 
   //put
-  updateUser(){}
+  updateUser(id,userDetails) {
+    this.httpReq.put(`${this.url} /${id}`,userDetails);
+    // this.url+'/'+id,userDetails
+
+  }
 
   //delete
-  removeUser(){}
+  removeUser(id) {
+    return this.httpReq.delete(this.url + '?id=' + id);
+  }
 }

@@ -13,20 +13,39 @@ export class HttpClientComponent implements OnInit {
   params;
   username = 'janu';
   url = 'data.json';
-  id=1;
-
+  id = 1;
+  userDetail = { id: "4" , first_name:"John", last_name:"Zedey", email:"johnzedey@gmail.com", gender:'Male'};
+  
 
   constructor(private httpService: HttpClientService) {}
 
   ngOnInit(): void {
     // this.httpReq.get(this.url).subscribe((data) => console.log(data));
     this.httpService.getData().subscribe((d) => console.log(d));
-    this.param = this.param.set('id',1);
 
     this.httpService.getUser(1).subscribe((d) => console.log(d));
 
-    this.httpService.getUserData(2,'Female').subscribe((d)=>console.log(d))
-    
+    this.httpService.getUserData(2, 'Female').subscribe((d) => console.log(d));
+
+    this.httpService.addUser(this.userDetail).subscribe((d)=>console.log(d));
+    // this.httpService.getData().subscribe((d) => console.log(d));
+
+    this.httpService.removeUser(2).subscribe(d=>console.log(d))
+
+    this.param = this.param.set("first_name", "feddy");
+
+    // this.httpService.updateUser(1,{"first_name": "Feddy",});
+
+    this.httpService.updateUser(4,{
+      "id": "1",
+      "first_name": "feddy",
+      "last_name": "Denning",
+      "email": "idenning0@tmall.com",
+      "gender": "Polygender"
+    });
+
+
+
   }
 
   setParam() {
