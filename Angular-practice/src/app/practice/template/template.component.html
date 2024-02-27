@@ -1,0 +1,168 @@
+<h3>{{title}}</h3>
+<img src="{{imgUrl}}" alt="" width="300" height="200">
+<p>Addition of 2 numbers {{10+20}}</p>
+<p>string concatenation {{"Hello " + "World...!"}}</p>
+<p>{{"title"}}</p>
+
+<p>{{title  + content}}</p>
+
+<p>{{title}} : {{ content}}</p>
+
+<p>{{title + " : " + content}} </p>
+
+<!-- <p  style =" color: {{color}} "> interpolation in css property using inline css</p> 
+
+<p style =" {{property}} : {{color}} ">property and value both are interpolated </p> -->
+
+<button [disabled]="true"> Click</button>
+
+<p> Function interpolation: {{functionInterpolation()}}</p>
+
+<p>Max of two numbers: {{Max(100,200)}}</p>
+
+<h3>Template statements</h3>
+<p> Student details: {{studentDetails}}</p>
+
+
+<label for="">Enter Student Details
+    <label for="">Enter name:
+        <input type="text" #stuname> Entered name is: {{stuname.value}}
+    </label><br>
+    <label for="">Enter standard
+        <input type="number" min="1" max="12" #stdstandard> Entered standrad is: {{stdstandard.value}}
+    </label><br>
+    <button (click)="inputDisplay(stuname.value,stdstandard.value)">Submit</button>
+</label>
+
+
+<p *ngIf="valueChange">Student details: {{studentDetails}}</p>
+
+<p>{{array}}</p>
+
+<button (click)="Arraypush()">click</button>
+<!-- <p>{{Arraypush()}}</p> -->
+
+<p *ngIf="arrayChange">{{array}}</p>
+
+<h4>Live binding check</h4>
+
+
+<p>previous value: {{value}} {{valchange()}} <br> current value: {{value}}</p>
+
+
+<p> referrence variable value - student name: {{stuname.value}}</p>
+<p> referrence variable value- student value : {{stdstandard.value}}</p>
+
+
+<h5>Employee details</h5>
+<ol>
+    <li *ngFor="let employee of employeeDetails">FirstName: {{employee.firstname}}</li>
+</ol>
+
+
+<h4>Attribute binding</h4>
+
+<img [attr.src]="imgUrl" alt="">
+
+
+<h4>Class and style binding</h4>
+
+<p [class.paraclass]="classActive">Paragraph is displayed when class active variable is true </p>
+
+<h4>Binding multiple class</h4>
+
+<p [ngClass]="{'class1': classActive, 'class2' : anotherclassActive}">Binding multiple classes to a single element </p>
+
+<p [style.color]="color">Paragraph is green</p>
+
+<p [style.background-color]="backgroundcolor">Style binding - backgroundcolor is {{backgroundcolor}}</p>
+
+
+<h4>Event binding</h4>
+
+<button (click)="changecolor()"> click </button>
+<p [style.color]="color"> {{eventcontent}}</p>
+
+
+<h4>one way binding</h4>
+<input type="text" #input (keyup)="oneWayBinding(input.value)">
+<!-- <p>{{input.value}}</p> -->
+<p>Input text: {{text}}</p>
+
+
+<h4>Two-way Binding Example</h4>
+<input [(ngModel)]="twowaybinding" /> <br /><br />
+<p> Input text: {{twowaybinding}} </p>
+
+
+<h1>Piping</h1>
+
+<h5>Display date in format</h5>
+
+<p>{{birthday | date}}</p>
+<h5>Today date and time</h5>
+
+<p>{{todaydatetime | date}}</p>
+<p>{{todaydatetime|date:'medium'}}</p>
+<p>{{todaydatetime|date:'full'}}</p>
+
+<p>{{todaydatetime|date:'shortTime'}}</p>
+<p>{{todaydatetime|date:'mm:ss'}}</p>
+<p>{{todaydatetime|date:"MMM dd - yyyy 'at' hh:mm a"}}</p>
+
+
+<h5>Display the text in uppercase and lowercase</h5>
+<p>{{lowercasetext | uppercase}}</p>
+<!-- <P>{{lowercasetext}}</P> -->
+<p>{{uppercasetext | lowercase}}</p>
+<!-- <P>{{uppercasetext}}</P> -->
+
+
+<h5>Currency pipe</h5>
+<p> {{currencyvalue | currency}} </p>
+<p> INR format: {{currencyvalue | currency:'INR'}} </p>
+
+<h5>Decimal pipe</h5>
+<p>{{number }}</p>
+<p>{{number | number}}</p>
+<p>{{number | number: "4.3-5"}}</p>
+<!-- <p>{{number | number: '4.3-5' : 'fr' }}</p> -->
+
+
+<h5>Chaining data and pipes</h5>
+<p>{{sampleString | slice : 2:5 | uppercase }}</p>
+<p>{{birthday |  date: 'MMMM yyyy dd hh:mm a' | uppercase }}</p>
+
+<h5>Pipes with condition</h5>
+<label for="">Enter uppercase or lowercase to display string in upper or lower case
+<input type="text" #case>
+</label>
+<p>{{(case.value=='lowercase'?  (string1 | lowercase) : case.value=='uppercase'? (string1 | uppercase): " ")}}</p>
+
+<!-- <p>{{1?string1:string2 | uppercase }}</p>
+<p>{{(1?string1:string2) | uppercase }}</p> -->
+
+<h5>Custom pipes</h5>
+<p>{{ feet | custompipe : "inches"}}</p>
+
+<h5>Default parameter to pipes</h5>
+<p>{{feet | custompipe }}</p>  
+
+<img [src] =' url | imgUrl: "./assets/default-img.jpg" ' alt="" />
+
+
+<!-- <h3>List a array using pipe</h3>
+<p>{{stringArray | listToString}}</p> -->
+
+<p>Observable result</p>
+<ul>
+<li *ngFor="let o of obj">{{o.name}}</li>
+</ul>
+
+<h5>Async Pipe</h5>
+<p *ngFor="let o of obs$ | async">{{o.dept}}</p>
+
+
+<h5>Json Pipe</h5>
+
+<p>{{json | json}}</p>

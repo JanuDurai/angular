@@ -1,0 +1,15 @@
+<h5>File 1 </h5>
+<button (click)="alertmessage()">Submit</button>
+
+<p>Service depends on another service</p>
+
+<h5>Max of two numbers</h5>
+<label for="">Enter number 1</label>
+<input type="number" #number1>
+<label for="">Enter number 2</label>
+<input type="number" #number2>
+
+<button (click)="GetNumbers(number1.value,number2.value)">Max number </button>
+
+<p >Maximum of square of two numbers : {{result}}</p>
+

@@ -1,0 +1,23 @@
+<p>User data table </p>
+
+<table>
+ <thead>
+    <tr><th *ngFor="let item of userData[0] | keyvalue ">{{item.key}}</th> </tr>
+ </thead>
+<tbody>
+   
+    
+    <!-- <tr *ngFor="let obj of userData">
+        <td *ngFor="let item of obj | keyvalue" (click)="displaytablecontent(item)">{{item.value}}</td>
+    </tr>
+     -->
+
+    <tr *ngFor="let obj of userData" (click)="dataSent(obj)">
+        <td *ngFor="let item of obj | keyvalue" >{{item.value}}</td>
+    </tr>
+     
+
+
+</tbody>
+
+</table>

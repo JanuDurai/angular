@@ -1,0 +1,9 @@
+:host{
+    font-style: italic;
+    color:indigo;
+}
+
+:host h2{
+      background-color: aqua;
+}   
+
