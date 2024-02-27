@@ -1,4 +1,4 @@
-<form formGroup="Data" onsubmit="DataTransfer()">
+<form formGroup="Data" (ngSubmit)="DataTransfer()" >
   <label for="" class="newline">Register</label><br />
 
   <div class="row">
@@ -7,15 +7,19 @@
         type="text"
         formControlName="userfirstname"
         class="form-control form-control-lg "
-        placeholder="First Name"
+        placeholder="First Name" 
       />
+   <!-- <div *ngIf="Data.get('userfirstname').invalid && (Data.get('userfirstname').dirty || validateForm.get('userfirstname').touched)">
+      <p *ngIf="Data.get('userfirstname').errors ?.['required']" style="color: red" >*Name must be given</p>
+    </div> -->
+
     </div>
     <div class="col">
       <input
         type="text"
         formControlName="userlastname"
         class="form-control form-control-lg"
-        placeholder="Last Name"
+        placeholder="Last Name" 
       />
     </div>
   </div>
@@ -27,7 +31,7 @@
         type="number"
         formControlName="userage"
         class="form-control form-control-lg"
-        placeholder="Age"
+        placeholder="Age" 
       />
     </div>
     <div class="col">
@@ -35,7 +39,7 @@
         type="number"
         formControlName="userheight"
         class="form-control form-control-lg"
-        placeholder="Height"
+        placeholder="Height" 
       />
     </div>
   </div>
@@ -47,7 +51,7 @@
         type="number"
         formControlName="userweight"
         class="form-control form-control-lg"
-        placeholder="Current Weight"
+        placeholder="Current Weight" 
       />
     </div>
     <div class="col">
@@ -55,7 +59,7 @@
         type="number"
         formControlName="usertargetweight"
         class="form-control form-control-lg"
-        placeholder="Target Weight"
+        placeholder="Target Weight" 
       />
     </div>
   </div>
@@ -80,7 +84,7 @@
         type="text"
         formControlName="userdaystoachieve"
         placeholder="Days To Achieve"
-        class="form-control form-control-lg"
+        class="form-control form-control-lg" 
       />
     </div>
   </div>
@@ -92,7 +96,7 @@
         type="text"
         formControlName="userusername"
         placeholder="Username"
-        class="form-control form-control-lg"
+        class="form-control form-control-lg" 
       />
     </div>
     <div class="col">
@@ -100,7 +104,7 @@
         type="password"
         formControlName="userpassword"
         placeholder="Password"
-        class="form-control form-control-lg"
+        class="form-control form-control-lg" 
       />
     </div>
     <div class="col">
@@ -108,22 +112,27 @@
         type="password"
         formControlName="userconfirmpassword"
         placeholder="Confirm Password"
-        class="form-control form-control-lg"
+        class="form-control form-control-lg" 
       />
     </div>
   </div>
+
+    
+
+
   <br>
 
  <div id="flex-button">
     <div id="cancel">
-        <button class="btn btn-primary">Cancel</button>
+        <button >Cancel</button>
       </div>
     
         
           <div id="submit">        
-                <button class="btn btn-primary">Submit</button>
+                <button >Submit</button>
           </div>
 
  </div>
  
 </form>
+

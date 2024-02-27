@@ -11,7 +11,7 @@ import { SharedModule } from './shared.module';
 import { DietModule } from './diet.module';
 import { UserService } from './services/user.service';
 import { DietService } from './services/diet.service';
-import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +28,8 @@ import { registerLocaleData } from '@angular/common';
     AppRoutingModule,
     SharedModule,
     DietModule,
+    HttpClientModule,
+    
   ],
   providers: [UserService,DietService],
   bootstrap: [AppComponent],

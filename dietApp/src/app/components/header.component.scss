@@ -1,0 +1,18 @@
+button{
+    display: flex;
+    width: 100px;
+    height:50px;
+    border: 2px solid grey;
+    float:inline-end;
+    background-color:grey;
+    color: azure;
+    margin: 30px 100px;   
+
+}
+
+.active{
+    background-color: white;
+    color: grey;
+    border: 2px solid grey;
+    font-weight: bolder;
+ }
