@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { FormArray, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpClientService } from '../http-client/http-client.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -21,7 +22,8 @@ export class FormComponent {
   input;
   name;
 
-  constructor(private form: FormBuilder) {}
+  constructor(private form: FormBuilder,
+              private service: HttpClientService) {}
 
 
   colorChange() {
@@ -53,6 +55,10 @@ export class FormComponent {
 
   dataDisplay() {
     this.submitted = !this.submitted;
+    this.service.addUser(this.UserProfileData.value);
+    console.log(this.UserProfileData.value);
+
+
   }
 
   AddressDataDisplay() {
