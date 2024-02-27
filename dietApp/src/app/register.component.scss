@@ -1,0 +1,26 @@
+input,select{
+    display: block;
+
+}
+
+form{
+    border: 2px solid black;
+    display: inline-block;
+    padding: 30px 30px;
+    margin: 200px 400px;
+    text-align: center;
+    border-radius: 30px;
+}
+.newline{
+    font-size:x-large;
+    display: block;
+}
+
+#flex-button{
+    display: flex;
+    justify-content: flex-end;
+}
+#cancel{
+    padding: 0 50px ;
+}
+

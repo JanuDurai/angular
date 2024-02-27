@@ -1,1 +1,129 @@
-<p>register works!</p>
+<form formGroup="Data" onsubmit="DataTransfer()">
+  <label for="" class="newline">Register</label><br />
+
+  <div class="row">
+    <div class="col" >
+      <input
+        type="text"
+        formControlName="userfirstname"
+        class="form-control form-control-lg "
+        placeholder="First Name"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        formControlName="userlastname"
+        class="form-control form-control-lg"
+        placeholder="Last Name"
+      />
+    </div>
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col">
+      <input
+        type="number"
+        formControlName="userage"
+        class="form-control form-control-lg"
+        placeholder="Age"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="number"
+        formControlName="userheight"
+        class="form-control form-control-lg"
+        placeholder="Height"
+      />
+    </div>
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col">
+      <input
+        type="number"
+        formControlName="userweight"
+        class="form-control form-control-lg"
+        placeholder="Current Weight"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="number"
+        formControlName="usertargetweight"
+        class="form-control form-control-lg"
+        placeholder="Target Weight"
+      />
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col" >
+      <select
+        name="choice"
+        formControlName="userchoice"
+        class="form-control form-control-lg  "
+      >
+        <option value="" selected>Preferrence</option>
+        <option value="choice">Weight Gain</option>
+        <option value="choice">Weight Loss</option>
+        <option value="choice">Maintain Weight</option>
+      </select>
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        formControlName="userdaystoachieve"
+        placeholder="Days To Achieve"
+        class="form-control form-control-lg"
+      />
+    </div>
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        formControlName="userusername"
+        placeholder="Username"
+        class="form-control form-control-lg"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="password"
+        formControlName="userpassword"
+        placeholder="Password"
+        class="form-control form-control-lg"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="password"
+        formControlName="userconfirmpassword"
+        placeholder="Confirm Password"
+        class="form-control form-control-lg"
+      />
+    </div>
+  </div>
+  <br>
+
+ <div id="flex-button">
+    <div id="cancel">
+        <button class="btn btn-primary">Cancel</button>
+      </div>
+    
+        
+          <div id="submit">        
+                <button class="btn btn-primary">Submit</button>
+          </div>
+
+ </div>
+ 
+</form>
