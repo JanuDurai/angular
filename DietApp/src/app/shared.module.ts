@@ -6,16 +6,15 @@ import { HeaderComponent } from './components/header.component';
 import { FooterComponent } from './components/footer.component';
 import { NavBarComponent } from './components/nav-bar.component';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
   ],
   exports:[HeaderComponent,FooterComponent,NavBarComponent]
 })

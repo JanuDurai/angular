@@ -9,6 +9,8 @@ import { HomeComponent } from './home.component';
 import { ProfileComponent } from './profile.component';
 import { SharedModule } from './shared.module';
 import { DietModule } from './diet.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,9 @@ import { DietModule } from './diet.module';
     AppRoutingModule,
     SharedModule,
     DietModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    
     
   ],
   providers: [],

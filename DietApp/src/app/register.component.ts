@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-
+import { Validators } from '@angular/forms';
+import { UserService } from './services/user.service';
+import { PasswordMatchValidation } from './constants/passwordCheck.directive';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,43 +10,33 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent {
 
-  // constructor(private userDetails:UserService){}
-  //   Data= new FormGroup({
-  //     userfirstname:new FormControl('',[Validators.pattern("^(?=.*[A-Z]) (?=.*[a-z]).{2,20}$"),Validators.required]),
-  //     userlastname:  new FormControl('',[Validators.pattern("^(?=.*[A-Z]) (?=.*[a-z]).{2,20}$"),Validators.required]),
-  //     userage: new FormControl('',[Validators.min(18), Validators.max(60),Validators.required]),
-  //     userheight: new FormControl('',[Validators.required]),
-  //     userweight:new FormControl('',[Validators.required]),
-  //     usertargetweight: new FormControl('',[Validators.required]),
-  //     userchoice: new FormControl('',[Validators.required]),
-  //     userdaystoachieve: new FormControl('',[Validators.required]),
-  //     userusername: new FormControl('',[Validators.minLength(4),Validators.maxLength(15),Validators.required]),
-  //     userpassword: new FormControl('',[Validators.pattern("^(?=.* [A-Z]) (?=.*[a-z]) (?=.*\d) (?=.*[!@#$%^&*]) (?=.*[A-Z a-z \d !@#$%^&*]).{8,}$"),Validators.required]),
-  //     userconfirmpassword: new FormControl('',[Validators.pattern("^(?=.* [A-Z]) (?=.*[a-z]) (?=.*\d) (?=.*[!@#$%^&*]) (?=.*[A-Z a-z \d !@#$%^&*]).{8,}$"),Validators.required])
-  //  });
-  
-  //  sampledata={name:"janu"}
+
+  constructor(private userDetails:UserService){}
+    Data= new FormGroup({
+      userfirstname:new FormControl('',[Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*.{2,20}$/),Validators.required]),
+      userlastname:  new FormControl('',[Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*.{2,20}$/),Validators.required]),
+      userage: new FormControl('',[Validators.min(18), Validators.max(60),Validators.required]),
+      userheightfeet: new FormControl('',[Validators.required]),
+      userheightinches:new FormControl('',[Validators.required]),
+      userweight:new FormControl('',[Validators.required]),
+      usertargetweight: new FormControl('',[Validators.required]),
+      userchoice: new FormControl('',[Validators.required]),
+      userdaystoachieve: new FormControl('',[Validators.required]),
+      userusername: new FormControl('',[Validators.minLength(4),Validators.maxLength(15),Validators.required]),
+      userpassword: new FormControl('',[Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),Validators.required,Validators.minLength(8)]),
+      userconfirmpassword: new FormControl('',[Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),Validators.required,
+      Validators.minLength(8)])
+   }, {validators:PasswordMatchValidation});
    
-  DataTransfer(){
-        // this.userDetails.addUserData(this.Data).subscribe(d =>console.log(d));   
-        // this.userDetails.addUserData(this.userDetails)
+ onsubmit(){
+        this.userDetails.addUser(this.Data.value);  
        
   }
-
-
-   userDetails= new FormGroup({
-       firstName: new FormControl(''),
-       lastName: new FormControl(),
-       Age: new FormControl(),
-       Height: new FormControl(),
-       Weight: new FormControl(),
-       Targetweight : new FormControl(), 
-       choice: new FormControl(),
-       daystoachieve: new FormControl(),
-       username: new FormControl(),
-       password: new FormControl(),
-       confirmpassword: new FormControl()
-   })
-
+  checkUsername(){
+           this.userDetails.userName(this.Data.value);
+  }
+ get userfirstname(){
+    return this.Data.controls['userfirstname'];
+ }
 
 }
