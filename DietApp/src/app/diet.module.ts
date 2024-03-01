@@ -14,6 +14,7 @@ import { WorkoutPlanComponent } from './workout-plan.component';
   imports: [
     CommonModule,
     DietRoutingModule
-  ]
+  ],
+  exports:[FoodPlanComponent,WorkoutPlanComponent]
 })
 export class DietModule { }

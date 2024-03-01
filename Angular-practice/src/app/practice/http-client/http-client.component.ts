@@ -16,7 +16,7 @@ export class HttpClientComponent implements OnInit {
   id = 1;
   userDetail = { id: "4" , first_name:"John", last_name:"Zedey", email:"johnzedey@gmail.com", gender:'Male'};
   
-
+  // userD:Object=[];
   constructor(private httpService: HttpClientService) {}
 
   ngOnInit(): void {
@@ -25,10 +25,16 @@ export class HttpClientComponent implements OnInit {
 
     this.httpService.getUser(1).subscribe((d) => console.log(d));
 
+  
     this.httpService.getUserData(2, 'Female').subscribe((d) => console.log(d));
 
     this.httpService.addUser(this.userDetail).subscribe((d)=>console.log(d));
     // this.httpService.getData().subscribe((d) => console.log(d));
+
+    // this.httpService.getData().subscribe((d) => this.userD=d);
+    // console.log(`User.............................................`,this.userD);
+    
+
 
     this.httpService.removeUser(2).subscribe(d=>console.log(d))
 

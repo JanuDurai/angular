@@ -1,95 +1,385 @@
 {
   "user": [
     {
-      "id": "e0dd",
+      "id": "ba2a",
       "userfirstname": "Sumeka",
       "userlastname": "Arasakumar",
-      "userage": 21,
-      "userheightfeet": "5",
-      "userheightinches": "5",
-      "userweight": 50,
-      "usertargetweight": 55,
-      "userchoice": "choice",
-      "userdaystoachieve": "6",
+      "userage": 29,
+      "usergender": "Female",
+      "userheight": "160",
+      "userweight": 64,
+      "usertargetweight": 58,
+      "userchoice": "Weight Loss",
+      "userdaystoachieve": 120,
       "userusername": "SumekaArasakumar",
       "userpassword": "Sumeka@2002",
       "userconfirmpassword": "Sumeka@2002"
     },
     {
-      "id": "cdc3",
+      "id": "643e",
       "userfirstname": "Vinu",
       "userlastname": "Dharshini",
-      "userage": 25,
-      "userheightfeet": "6",
-      "userheightinches": "25",
+      "userage": 21,
+      "usergender": "Female",
+      "userheight": "170",
       "userweight": 35,
-      "usertargetweight": 45,
-      "userchoice": "choice",
-      "userdaystoachieve": "90",
-      "userusername": "VinuD",
-      "userpassword": "@2002Vinu",
-      "userconfirmpassword": "@2002Vinu"
+      "usertargetweight": 50,
+      "userchoice": "Weight Gain",
+      "userdaystoachieve": 45,
+      "userusername": "VinuDhar",
+      "userpassword": "Vinu@123",
+      "userconfirmpassword": "Vinu@123"
     },
     {
-      "id": "02bc",
-      "userfirstname": "",
-      "userlastname": "",
-      "userage": "",
-      "userheightfeet": "",
-      "userheightinches": "",
-      "userweight": "",
-      "usertargetweight": "",
-      "userchoice": "",
-      "userdaystoachieve": "",
-      "userusername": "",
-      "userpassword": "",
-      "userconfirmpassword": ""
+      "id": "eac0",
+      "userfirstname": "Dinesh",
+      "userlastname": "Kumar",
+      "userage": 35,
+      "usergender": "Male",
+      "userheight": "158",
+      "userweight": 58,
+      "usertargetweight": 65,
+      "userchoice": "Weight Gain",
+      "userdaystoachieve": 60,
+      "userusername": "Dinesh",
+      "userpassword": "Dinesh@123",
+      "userconfirmpassword": "Dinesh@123"
     },
     {
-      "id": "0f36",
-      "userfirstname": "",
-      "userlastname": "",
-      "userage": "",
-      "userheightfeet": "",
-      "userheightinches": "",
-      "userweight": "",
-      "usertargetweight": "",
-      "userchoice": "",
-      "userdaystoachieve": "",
-      "userusername": "",
-      "userpassword": "",
-      "userconfirmpassword": ""
+      "id": "02f3",
+      "userfirstname": "Ram",
+      "userlastname": "karthik",
+      "userage": 35,
+      "usergender": "Male",
+      "userheight": "175",
+      "userweight": 80,
+      "usertargetweight": 70,
+      "userchoice": "Weight Loss",
+      "userdaystoachieve": 60,
+      "userusername": "Ram",
+      "userpassword": "Ram@",
+      "userconfirmpassword": "Ram@"
     },
     {
-      "id": "4b73",
-      "userfirstname": "",
-      "userlastname": "",
-      "userage": "",
-      "userheightfeet": "",
-      "userheightinches": "",
-      "userweight": "",
-      "usertargetweight": "",
-      "userchoice": "",
-      "userdaystoachieve": "",
-      "userusername": "",
-      "userpassword": "",
-      "userconfirmpassword": ""
-    },
-    {
-      "id": "4fb5",
-      "userfirstname": "janu",
-      "userlastname": "",
-      "userage": "",
-      "userheightfeet": "",
-      "userheightinches": "",
-      "userweight": "",
-      "usertargetweight": "",
-      "userchoice": "",
-      "userdaystoachieve": "",
-      "userusername": "",
-      "userpassword": "",
-      "userconfirmpassword": ""
+      "id": "d218",
+      "userfirstname": "Janu",
+      "userlastname": "Shree",
+      "userage": 21,
+      "usergender": "Female",
+      "userheight": "150",
+      "userweight": 53,
+      "usertargetweight": 48,
+      "userchoice": "Weight Loss",
+      "userdaystoachieve": 60,
+      "userusername": "Janu",
+      "userpassword": "Janu",
+      "userconfirmpassword": "Janu"
     }
   ],
-  "diet": []
+  "diet": [
+    {
+      "category": "breakfast",
+      "food": "idly",
+      "quantity": "2",
+      "sidedish": "sambar",
+      "sidedishquantity": "100g",
+      "calorie": 246
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "dal",
+      "sidedishquantity": "100g",
+      "calorie": 310
+    },
+    {
+      "category": "dinner",
+      "food": "chappathi",
+      "quantity": "2",
+      "sidedish": "Channa Masala",
+      "sidedishquantity": "100g",
+      "calorie": 249
+    },
+    {
+      "category": "breakfast",
+      "food": "upma",
+      "quantity": "100g",
+      "sidedish": "Small Banana",
+      "sidedishquantity": "70g",
+      "calorie": 279
+    },
+    {
+      "category": "lunch",
+      "food": "vegetable pulao",
+      "quantity": "100g",
+      "sidedish": "curd",
+      "sidedishquantity": "50g",
+      "calorie": 408
+    },
+    {
+      "category": "dinner",
+      "food": "Dosa",
+      "quantity": "2",
+      "sidedish": "sambar",
+      "sidedishquantity": "100g",
+      "calorie": 289
+    },
+    {
+      "category": "breakfast",
+      "food": "Millet Upma",
+      "quantity": "100g",
+      "sidedish": "coconut chutney",
+      "sidedishquantity": "15g",
+      "calorie": 237
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "Moong dal",
+      "sidedishquantity": "100g",
+      "calorie": 553
+    },
+    {
+      "category": "dinner",
+      "food": "Vegetable soup",
+      "quantity": "100ml",
+      "sidedish": "Small Banana",
+      "sidedishquantity": "70g",
+      "calorie": 110
+    },
+    {
+      "category": "breakfast",
+      "food": "Kichadi",
+      "quantity": "100g",
+      "sidedish": "coconut chutney",
+      "sidedishquantity": "15g",
+      "calorie": 150
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "chicken gravy",
+      "sidedishquantity": "200g",
+      "calorie": 288
+    },
+    {
+      "category": "dinner",
+      "food": "Vegetable salad",
+      "quantity": "200g",
+      "sidedish": "Apple",
+      "sidedishquantity": "100g",
+      "calorie": 86
+    },
+    {
+      "category": "breakfast",
+      "food": "poha",
+      "quantity": "100g",
+      "sidedish": "Brown Sugar",
+      "sidedishquantity": "10g",
+      "calorie": 174
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "Mushroom gravy",
+      "sidedishquantity": "100g",
+      "calorie": 264
+    },
+    {
+      "category": "dinner",
+      "food": "Boiled Sweet Potato",
+      "quantity": "150g",
+      "sidedish": "Cucumber",
+      "sidedishquantity": "100g",
+      "calorie": 118
+    },
+    {
+      "category": "breakfast",
+      "food": "Appam",
+      "quantity": "2",
+      "sidedish": "Coconut Milk",
+      "sidedishquantity": "80ml",
+      "calorie": 271
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "panneer gravy",
+      "sidedishquantity": "50g",
+      "calorie": 259
+    },
+    {
+      "category":"dinner",
+      "food": "chappathi",
+      "quantity": "2",
+      "sidedish": "Stuffed vegetables",
+      "sidedishquantity": "100g",
+      "calorie": 228
+    },
+    {
+      "category": "breakfast",
+      "food": "Idly",
+      "quantity": "2",
+      "sidedish": "coconut chutney",
+      "sidedishquantity": "50g",
+      "calorie": 214
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "panneer gravy",
+      "sidedishquantity": "100g",
+      "calorie": 388
+    },
+    {
+      "category": "dinner",
+      "food": "Boiled Corn",
+      "quantity": "100g",
+      "sidedish": "Boiled Peanut",
+      "sidedishquantity": "30g",
+      "calorie": 201
+    },
+    {
+      "category": "breakfast",
+      "food": "Pongal",
+      "quantity": "100g",
+      "sidedish": "sambar and vada",
+      "sidedishquantity": "70g",
+      "calorie": 448
+    },
+    {
+      "category": "lunch",
+      "food": "Mutton Biriyani",
+      "quantity": "200g",
+      "sidedish": "Pepper chicken",
+      "sidedishquantity": "100g",
+      "calorie": 582
+    },
+    {
+      "category": "breakfast",
+      "food": "Wheat Noodles",
+      "quantity": "100g",
+      "sidedish": "tender coconut water ",
+      "sidedishquantity": "240g",
+      "calorie": 165
+    },
+    {
+      "category": "breakfast",
+      "food": "Ragi dosa",
+      "quantity": "2",
+      "sidedish": "Brown Sugar",
+      "sidedishquantity": "10g",
+      "calorie": 156
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "Fish curry",
+      "sidedishquantity": "150g",
+      "calorie":  345
+    },
+    {
+      "category": "dinner",
+      "food": "Corn soup",
+      "quantity": "125g",
+      "sidedish": "Watermelon",
+      "sidedishquantity": "100g",
+      "calorie": 200
+    },
+    {
+      "category": "breakfast",
+      "food": "Poori",
+      "quantity": "2",
+      "sidedish": "Potato masala",
+      "sidedishquantity": "100g",
+      "calorie": 334
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "Chickpeas gravy ",
+      "sidedishquantity": "100g",
+      "calorie": 239
+    },
+    {
+      "category": "dinner",
+      "food": "Vermicelli",
+      "quantity": "70g",
+      "sidedish": "Banana",
+      "sidedishquantity": "80g",
+      "calorie": 190
+    },
+    {
+      "category": "breakfast",
+      "food": "Utthapam",
+      "quantity": "2",
+      "sidedish": "sambar",
+      "sidedishquantity": "100g",
+      "calorie": 350
+    },
+    {
+      "category": "lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "panneer gravy",
+      "sidedishquantity": "100g",
+      "calorie": 360
+    },
+    {
+      "category":"dinner",
+      "food": "chappathi",
+      "quantity": "2",
+      "sidedish": "Pepper chicken",
+      "sidedishquantity": "150g",
+      "calorie": 282
+    },
+    {
+      "category":"breakfast",
+      "food": "Boiled Peanuts",
+      "quantity": "50g",
+      "sidedish": "Apple",
+      "sidedishquantity": "200g",
+      "calorie": 263
+    },
+    {
+      "category":"lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "panneer gravy",
+      "sidedishquantity": "100g",
+      "calorie": 360
+    },
+    {
+      "category": "breakfast",
+     "food": "Whole grain bread",
+      "quantity": "1",
+      "sidedish": "Stuffed with corn and vegetables",
+      "sidedishquantity": "100g",
+      "calorie": 190
+    },
+    {
+      "category":"lunch",
+      "food": "white rice",
+      "quantity": "100g",
+      "sidedish": "chicken chukka",
+      "sidedishquantity": "150g",
+      "calorie": 252
+    },
+    {
+      "category":"dinner",
+      "food": "corn and capsicum sandwitch",
+      "quantity": "1",
+      "sidedish": "Cucumber",
+      "sidedishquantity": "100g",
+      "calorie": 211
+    }
+  ]
 }

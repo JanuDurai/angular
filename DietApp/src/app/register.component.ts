@@ -10,14 +10,16 @@ import { PasswordMatchValidation } from './constants/passwordCheck.directive';
 })
 export class RegisterComponent {
 
+  gender =['Male','Female'];
+  choice =['Weight Loss','Weight Gain', 'Weight Maintain'];
 
   constructor(private userDetails:UserService){}
     Data= new FormGroup({
       userfirstname:new FormControl('',[Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*.{2,20}$/),Validators.required]),
       userlastname:  new FormControl('',[Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*.{2,20}$/),Validators.required]),
       userage: new FormControl('',[Validators.min(18), Validators.max(60),Validators.required]),
-      userheightfeet: new FormControl('',[Validators.required]),
-      userheightinches:new FormControl('',[Validators.required]),
+      usergender:new FormControl('',[Validators.required]),
+      userheight: new FormControl('',[Validators.required]),
       userweight:new FormControl('',[Validators.required]),
       usertargetweight: new FormControl('',[Validators.required]),
       userchoice: new FormControl('',[Validators.required]),
@@ -31,9 +33,6 @@ export class RegisterComponent {
  onsubmit(){
         this.userDetails.addUser(this.Data.value);  
        
-  }
-  checkUsername(){
-           this.userDetails.userName(this.Data.value);
   }
  get userfirstname(){
     return this.Data.controls['userfirstname'];

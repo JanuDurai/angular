@@ -22,6 +22,9 @@
         </div> -->
   
        </div>
+    </div>
+<br>
+    <div class="row">
       <div class="col">
         <input
           type="text"
@@ -32,12 +35,11 @@
         <div *ngIf="Data.get('userlastname')?.invalid && (Data.get('userlastname')?.dirty || Data.get('userlastname')?.touched)">
           <div *ngIf="Data.get('userlastname')?.errors?.['required']" style="color: red" >*Last Name must be given</div>
           <div *ngIf="Data.get('userlastname')?.errors?.['pattern']" style="color: red">*Enter a valid Name</div>
-        </div>
-     
-     
-  
+        </div> 
   
       </div>
+
+
     </div>
     <br />
   
@@ -57,80 +59,82 @@
         </div>
       </div>
       <div class="col">
-        <input
-          type="text"
-          formControlName="userheightfeet"
-          class="form-control form-control-lg"
-          placeholder="Height in feet" 
-        />
-        <div *ngIf="Data.get('userheightfeet')?.invalid && (Data.get('userheightfeet')?.dirty || Data.get('userheightfeet')?.touched)">
-          <div *ngIf="Data.get('userheightfeet')?.errors?.['required']" style="color: red" >*Height must be given</div>
-        </div>
-  
-      </div>
-      <div class="col">
-        <input
-          type="text"
-          formControlName="userheightinches"
-          class="form-control form-control-lg"
-          placeholder="Height in inch" 
-        />
-        <div *ngIf="Data.get('userheightinches')?.invalid && (Data.get('userheightinches')?.dirty || Data.get('userheightinches')?.touched)">
-          <div *ngIf="Data.get('userheightinches')?.errors?.['required']" style="color: red" >*Inches must be given</div>
-        </div>
-  
-      </div>
-    </div>
-    <br />
-  
-    <div class="row">
-      <div class="col">
-        <input
-          type="number"
-          formControlName="userweight"
-          class="form-control form-control-lg"
-          placeholder="Current Weight" 
-        />
-        <div *ngIf="Data.get('userweight')?.invalid && (Data.get('userweight')?.dirty || Data.get('userweight')?.touched)">
-          <div *ngIf="Data.get('userweight')?.errors?.['required']" style="color: red" >*Weight must be given</div>
-        </div>
-  
-      </div>
-      <div class="col">
-        <input
-          type="number"
-          formControlName="usertargetweight"
-          class="form-control form-control-lg"
-          placeholder="Target Weight" 
-        />
-        <div *ngIf="Data.get('usertargetweight')?.invalid && (Data.get('usertargetweight')?.dirty || Data.get('usertargetweight')?.touched)">
-          <div *ngIf="Data.get('usertargetweight')?.errors?.['required']" style="color: red" >*Target Weight must be given</div>
-        </div>
-      </div>
-    </div>
-  
-    <br />
-  
-    <div class="row">
-      <div class="col" >
-        <select
-          name="choice"
-          formControlName="userchoice"
-          class="form-control form-control-lg  "
-        >
-          <option value="" selected>Preferrence</option>
-          <option value="choice">Weight Gain</option>
-          <option value="choice">Weight Loss</option>
-          <option value="choice" >Maintain Weight</option>
+
+        <select  name="gender" formControlName="usergender" class="form-control form-control-lg">
+          <option value="" selected>Gender</option>
+           <option *ngFor="let item of gender" [value]="item">{{item}}</option>
         </select>
-        <div *ngIf="Data.get('userchoice')?.invalid && (Data.get('userchoice')?.dirty || Data.get('userchoice')?.touched)">
-          <div *ngIf="Data.get('userchoice')?.errors?.['required']" style="color: red" >*Choice must be given</div>
+       
+        <div *ngIf="Data.get('usergender')?.invalid && (Data.get('usergender')?.dirty || Data.get('usergender')?.touched)">
+          <div *ngIf="Data.get('usergender')?.errors?.['required']" style="color: red" >*Gender must be given</div>
       </div>
-  
       </div>
+      </div>
+
+    <br />
+
+    <div class="row">
       <div class="col">
         <input
           type="text"
+          formControlName="userheight"
+          class="form-control form-control-lg"
+          placeholder="Height in cm" 
+        />
+        <div *ngIf="Data.get('userheight')?.invalid && (Data.get('userheight')?.dirty || Data.get('userheight')?.touched)">
+          <div *ngIf="Data.get('userheight')?.errors?.['required']" style="color: red" >*Height must be given</div>
+        </div>
+     </div>
+   <div class="col">
+   <input
+    type="number"
+    formControlName="userweight"
+    class="form-control form-control-lg"
+    placeholder="Current Weight" 
+  />
+  <div *ngIf="Data.get('userweight')?.invalid && (Data.get('userweight')?.dirty || Data.get('userweight')?.touched)">
+    <div *ngIf="Data.get('userweight')?.errors?.['required']" style="color: red" >*Weight must be given</div>
+  </div>
+
+</div>
+</div><br>
+
+      <div class="row">
+        <div class="col" >
+          <select
+            name="choice"
+            formControlName="userchoice"
+            class="form-control form-control-lg  "
+          >
+            <option value="" selected>Preferrence</option>
+            <option *ngFor="let item of choice" [value]="item">{{item}}</option>
+          </select>
+          <div *ngIf="Data.get('userchoice')?.invalid && (Data.get('userchoice')?.dirty || Data.get('userchoice')?.touched)">
+            <div *ngIf="Data.get('userchoice')?.errors?.['required']" style="color: red" >*Choice must be given</div>
+        </div>
+    
+        </div>
+
+        <div class="col">
+          <input
+            type="number"
+            formControlName="usertargetweight"
+            class="form-control form-control-lg"
+            placeholder="Target Weight" 
+          />
+          <div *ngIf="Data.get('usertargetweight')?.invalid && (Data.get('usertargetweight')?.dirty || Data.get('usertargetweight')?.touched)">
+            <div *ngIf="Data.get('usertargetweight')?.errors?.['required']" style="color: red" >*Target Weight must be given</div>
+          </div>
+        </div>
+    </div>
+  
+    <br />
+  
+    <div class="row">
+      
+      <div class="col">
+        <input
+          type="number"
           formControlName="userdaystoachieve"
           placeholder="Days To Achieve"
           class="form-control form-control-lg"
@@ -141,17 +145,12 @@
           <div *ngIf="Data.get('userdaystoachieve')?.errors?.['required']" style="color: red" >*Field must be given</div>
         </div>
       </div>
-    </div>
-    <br />
-  
-    <div class="row">
       <div class="col">
         <input
           type="text"
           formControlName="userusername"
           placeholder="Username"
           class="form-control form-control-lg" 
-          (keyup)="checkUsername()"
         />
         <div *ngIf="Data.get('userusername')?.invalid && (Data.get('userusername')?.dirty || Data.get('userusername')?.touched)">
           <div *ngIf="Data.get('userusername')?.errors?.['required']" style="color: red" >*Username must be given</div>
@@ -159,6 +158,11 @@
   
         </div>
       </div>
+    </div>
+    <br />
+  
+    <div class="row">
+     
       <div class="col">
         <input
           type="password"
