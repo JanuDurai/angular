@@ -8,9 +8,13 @@ import { UserService } from './services/user.service';
   styleUrls: ['./food-plan.component.scss'],
 })
 export class FoodPlanComponent {
+  //  username='SumekaArasakumar';
+  //  username = 'Janu';
+   username = 'VinuDhar';
+   // username='Ram';
   
   constructor(private dietService: DietService) {}
   DietDisplay() {
-    this.dietService.calculateDailyCalorie();
+    this.dietService.calculateDailyCalorie(this.username);
   }
 }
