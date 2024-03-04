@@ -15,7 +15,7 @@ export class DietService {
   itemquantity: any;
   sidedishquantity:any;
   randnumber:any;
-
+  username!:any;
 
   weightLossWeight!: number;
   reduceWeight!: number;
@@ -27,15 +27,20 @@ export class DietService {
   
   constructor(private userservice: UserService, private service: HttpClient) {}
 
-  calculateDailyCalorie(username: string) {
+  calculateDailyCalorie() {
+
+     this.username =sessionStorage.getItem("username");
     this.service
-      .get(this.url + '?userusername=' + username)
+      .get(this.url + '?userusername=' + this.username)
 
       .subscribe({
         next: (value: any) => {
           this.userData = value;
 
-          this.weightLossWeight = 0.75;
+          console.log(`..............`,this.userData);
+          
+          this.weightLossWeight = this.userData[0].usertargetweight;
+          
 
           this.reduceWeight = 1100 * this.weightLossWeight;
 

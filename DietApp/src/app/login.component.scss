@@ -1,0 +1,60 @@
+.background {
+  background-image: url("/assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  background-attachment: fixed;
+  padding: 50px 50px;
+}
+
+.newline {
+  font-size: x-large;
+  color: white;
+  font-weight: bolder;
+  background-color: grey;
+//   height: 70px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 4px;
+  padding-top: 15px;
+  display: block;
+
+}
+
+form {
+  display: inline-block;
+  margin: 100px 650px;
+  text-align: center;
+  border-radius: 6px;
+  height:30vh;
+  width: 350px;
+}
+
+input {
+   display: block;
+   color:grey;
+}
+
+input::placeholder{
+   color:grey;
+}
+
+.paddingdiv{
+   padding: 10px 10px;
+}
+
+button{
+   color:white;
+   background-color: grey;
+   border: 2px solid grey;
+   width:100px;
+   height:50px;
+   border-radius: 2px;
+}
+
+button:hover{
+background-color: white;
+color:grey;
+border:2px solid grey;
+}
+
+

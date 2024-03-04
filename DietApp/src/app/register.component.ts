@@ -12,6 +12,8 @@ export class RegisterComponent {
 
   gender =['Male','Female'];
   choice =['Weight Loss','Weight Gain', 'Weight Maintain'];
+  weight!:string;
+  invalidform:boolean=false;
 
   constructor(private userDetails:UserService){}
     Data= new FormGroup({
@@ -23,19 +25,32 @@ export class RegisterComponent {
       userweight:new FormControl('',[Validators.required]),
       usertargetweight: new FormControl('',[Validators.required]),
       userchoice: new FormControl('',[Validators.required]),
-      userdaystoachieve: new FormControl('',[Validators.required]),
       userusername: new FormControl('',[Validators.minLength(4),Validators.maxLength(15),Validators.required]),
       userpassword: new FormControl('',[Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),Validators.required,Validators.minLength(8)]),
       userconfirmpassword: new FormControl('',[Validators.pattern(/^[A-za-z0-9@#$%]+(?: [a-zA-Z0-9@#$%]+)*$/),Validators.required,
       Validators.minLength(8)])
-   }, {validators:PasswordMatchValidation});
+   },{validators:PasswordMatchValidation});
    
  onsubmit(){
-        this.userDetails.addUser(this.Data.value);  
+         
+        if(this.Data.invalid){
+            this.invalidform=true; 
+        }
+        else {
+           this.invalidform=false;
+           this.userDetails.addUser(this.Data.value);
+        }
        
   }
  get userfirstname(){
     return this.Data.controls['userfirstname'];
  }
+
+
+ changeValue(value:string){
+     this.weight = value;
+
+ }
+
 
 }

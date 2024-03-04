@@ -17,5 +17,6 @@ import { NavBarComponent } from './components/nav-bar.component';
     SharedRoutingModule,
   ],
   exports:[HeaderComponent,FooterComponent,NavBarComponent]
+  
 })
 export class SharedModule { }

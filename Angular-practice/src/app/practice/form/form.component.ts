@@ -29,6 +29,7 @@ export class FormComponent {
   colorChange() {
     this.color.setValue('Red');
   }
+  
   valueChange() {
     this.age = 20;
   }

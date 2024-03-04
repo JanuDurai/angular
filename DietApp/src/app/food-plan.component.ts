@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { DietService } from './services/diet.service';
-import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-food-plan',
@@ -8,13 +7,16 @@ import { UserService } from './services/user.service';
   styleUrls: ['./food-plan.component.scss'],
 })
 export class FoodPlanComponent {
+
   //  username='SumekaArasakumar';
   //  username = 'Janu';
-   username = 'VinuDhar';
+  //  username = 'VinuDhar';
    // username='Ram';
   
   constructor(private dietService: DietService) {}
   DietDisplay() {
-    this.dietService.calculateDailyCalorie(this.username);
+    this.dietService.calculateDailyCalorie();
   }
+
+
 }
