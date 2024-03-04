@@ -10,8 +10,16 @@
           class="form-control form-control lg"
           placeholder="UserName"
         />
+
+  <!-- <div *ngIf="loginDetails."></div> -->
+
+
       </div>
       <br />
+
+
+
+      
       <div>
         <input
           type="text"
@@ -21,7 +29,7 @@
         />
       </div>
 
-      <div *ngIf=loginvalid style="color: red">*Password should match </div>
+      <div *ngIf="loginvalid" class="password">*Password should match </div>
 
       <br />
       <button (click)="checkPassword()">Submit</button>

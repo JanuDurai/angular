@@ -55,34 +55,6 @@
       "userusername": "Ram",
       "userpassword": "Ram#123",
       "userconfirmpassword": "Ram#123"
-    },
-    {
-      "id": "9b8d",
-      "userfirstname": "",
-      "userlastname": "",
-      "userage": "",
-      "usergender": "",
-      "userheight": "",
-      "userweight": "",
-      "usertargetweight": "",
-      "userchoice": "",
-      "userusername": "",
-      "userpassword": "",
-      "userconfirmpassword": ""
-    },
-    {
-      "id": "e9b5",
-      "userfirstname": "",
-      "userlastname": "",
-      "userage": "",
-      "usergender": "",
-      "userheight": "",
-      "userweight": "",
-      "usertargetweight": "",
-      "userchoice": "",
-      "userusername": "",
-      "userpassword": "",
-      "userconfirmpassword": ""
     }
   ],
   "diet": [
