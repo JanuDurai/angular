@@ -14,6 +14,7 @@ export class ProfileComponent {
   url="http://localhost:3000/user";
   Data:any;
   // user:any;
+  id!:number;
 
   constructor(private httpReq:HttpClient){
      this.username=sessionStorage.getItem("username");
@@ -21,11 +22,7 @@ export class ProfileComponent {
     httpReq.get(this.url + "?userusername=" + this.username).subscribe({next:(value)=>{
       this.userDetails = value;
       
-      console.log(this.userDetails);
-      
-  // this.user= new FormControl();
-  // this.user.setValue("red");
-
+      // console.log(this.userDetails[0].userfirstname);
   this.Data= new FormGroup({
     userfirstname:new FormControl(this.userDetails[0].userfirstname),
     userlastname:  new FormControl(this.userDetails[0].userlastname),
@@ -40,7 +37,14 @@ export class ProfileComponent {
     userconfirmpassword: new FormControl(this.userDetails[0].userconfirmpassword)
   })
    
-  //  console.log(this.Data.value);
+   console.log(this.Data.value);
+   console.log(this.url + '?userusername='+this.username);
+
+   this.id=this.userDetails[0].id;
+
+   console.log(this.url + '/'+this.id);
+   
+   
   
 }})
     
@@ -48,7 +52,7 @@ export class ProfileComponent {
 
 
   UpdateChanges(){
-    // this.httpReq.put()
+    this.httpReq.put(this.url + '/'+this.id , this.Data.value);
   }
 
 }
