@@ -52,7 +52,7 @@ export class ProfileComponent {
 
 
   UpdateChanges(){
-    this.httpReq.put(this.url + '/'+this.id , this.Data.value);
+    this.httpReq.put(this.url + '/'+this.id , this.Data.value).subscribe(()=>this.userDetails.push(this.Data.value));
   }
 
 }

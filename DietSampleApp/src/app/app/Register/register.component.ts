@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { UserService } from './services/user.service';
-import { PasswordMatchValidation } from './constants/passwordCheck.directive';
+import { UserService } from '../services/user.service';
+import { PasswordMatchValidation } from '../constants/passwordCheck.directive';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

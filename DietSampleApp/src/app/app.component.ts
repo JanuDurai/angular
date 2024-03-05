@@ -6,11 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-// userLoggedIn=false
-
-
-//create function to call service and assign val
-
-// call above function in oninit 
+  title = 'DietSampleApp';
 }
