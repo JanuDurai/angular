@@ -1,24 +1,23 @@
 import { Injectable, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, from, map, mergeMap, of, tap } from 'rxjs';
+import { Observable, map} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DietService implements OnInit{
 
-  sub!:any;
+  
   constructor(private userService:UserService, 
            private httpReq:HttpClient,){}
   ngOnInit(): void {
-        this.sub= new Subject();
    }
 
 
-   calculateDailyCalorie(){
+   calculateDailyCalorie():Observable<any>{
     
-       const username = this.userService.getUserName();
+    const username = this.userService.getUserName();
       return  this.userService.getUserDetail(username).pipe(map((value)=>{
        const  userData:any=value;
         let BMR!:number;
@@ -43,7 +42,7 @@ export class DietService implements OnInit{
              MaintanenceCalorie = BMR * 1.55;
        console.log(MaintanenceCalorie,reduceCalorie,BMR);
 
-if (userData[0].userchoice === 'Weight Loss')
+     if (userData[0].userchoice === 'Weight Loss')
           reduceWeight = MaintanenceCalorie - reduceCalorie;
         else if (userData[0].userchoice === 'Weight Gain')
           reduceWeight = MaintanenceCalorie + reduceCalorie;
@@ -56,23 +55,20 @@ if (userData[0].userchoice === 'Weight Loss')
        const dinnerCalorie = (reduceWeight * 30) / 100;
        const lunchCalorie = (reduceWeight * 40) / 100;
 
-        console.log(`breakfastcalorie`, breakfastCalorie);
-        console.log(`lunchcalorie`, lunchCalorie);
-        console.log(`dinnercalorie`, dinnerCalorie);
+        // console.log(`breakfastcalorie`, breakfastCalorie);
+        // console.log(`lunchcalorie`, lunchCalorie);
+        // console.log(`dinnercalorie`, dinnerCalorie);
 
         let breakfastfood:any;
         let lunchfood:any;
         let dinnerfood:any;
-          this.getDataOnCategory('breakfast',breakfastCalorie).subscribe({next:(value:any)=> {breakfastfood=value; console.log(breakfastfood)}})
-          this.getDataOnCategory('lunch',lunchCalorie).subscribe({next:(value:any)=> {lunchfood=value; console.log(lunchfood)}})
-          this.getDataOnCategory('dinner',dinnerCalorie).subscribe({next:(value:any)=> {dinnerfood=value; console.log(dinnerfood)}})
-
-          const data =[{breakfast:breakfastfood, lunch:lunchfood,dinner:dinnerfood}];
-
-          console.log(data);
-          
-           return data;
-      }
+        let data: any=[];
+          this.getDataOnCategory('breakfast',breakfastCalorie).subscribe({next:(value:any)=> {breakfastfood=value; console.log(breakfastfood); data.push(breakfastfood)}})
+          this.getDataOnCategory('lunch',lunchCalorie).subscribe({next:(value:any)=> {lunchfood=value; console.log(lunchfood);data.push(lunchfood)}})
+          this.getDataOnCategory('dinner',dinnerCalorie).subscribe({next:(value:any)=> {dinnerfood=value; console.log(dinnerfood); console.log(`data....`,data);
+          data.push(dinnerfood)}})
+          return data;
+  }
     
 
        ) )
