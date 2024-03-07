@@ -11,6 +11,8 @@ import { HomeComponent } from './Home/home.component';
 import { LoginComponent } from './Login/login.component';
 import { ProfileComponent } from './Profile/profile.component';
 import { RegisterComponent } from './Register/register.component';
+import { DietService } from './services/diet.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,11 @@ import { RegisterComponent } from './Register/register.component';
     SharedModule,
     DietModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
     
     
   ],
-  providers: [],
+  providers: [DietService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

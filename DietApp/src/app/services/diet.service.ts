@@ -1,147 +1,146 @@
 import { Injectable, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { HttpClient } from '@angular/common/http';
+import { Observable, Subject, from, map, mergeMap, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DietService {
-  userData: any;
-  DietData: any;
-  BMR!: number;
-  MaintanenceCalorie!: number;
-  DailyCalorie!: number;
-  categoryItems: any;
-  itemquantity: any;
-  sidedishquantity:any;
-  randnumber:any;
-  username!:any;
-  returnArray=[];
+export class DietService implements OnInit{
 
-  weightLossWeight!: number;
-  reduceWeight!: number;
-  breakfastCalorie!: number;
-  lunchCalorie!: number;
-  dinnerCalorie!: number;
-  public url = 'http://localhost:3000/user';
-  public dieturl = 'http://localhost:3000/diet';
-  
-  constructor(private userservice: UserService, private service: HttpClient) {}
+  sub!:any;
+  constructor(private userService:UserService, 
+           private httpReq:HttpClient,){}
+  ngOnInit(): void {
+        this.sub= new Subject();
+   }
 
-  calculateDailyCalorie() {
 
-     this.username =sessionStorage.getItem("username");
-    this.service
-      .get(this.url + '?userusername=' + this.username)
+   calculateDailyCalorie(){
+    
+       const username = this.userService.getUserName();
+      return  this.userService.getUserDetail(username).pipe(map((value)=>{
+       const  userData:any=value;
+        let BMR!:number;
+        let MaintanenceCalorie:number;
+       const reduceCalorie = userData[0].usertargetweight * 1100;
+       let reduceWeight:number;
 
-      .subscribe({
-        next: (value: any) => {
-          this.userData = value;
+        if (userData[0].usergender === 'Male') {
+              BMR =
+                        66.473 +
+                        13.7516 * userData[0].userweight +
+                        5.0033 * userData[0].userheight -
+                        6.755 * userData[0].userage;
+        } else if (userData[0].usergender === 'Female') {
+              BMR =
+                        655.1 +
+                        9.563 * userData[0].userweight +
+                        1.85 * userData[0].userheight -
+                        4.676 * userData[0].userage;
+                    }
 
-          console.log(`..............`,this.userData);
+             MaintanenceCalorie = BMR * 1.55;
+       console.log(MaintanenceCalorie,reduceCalorie,BMR);
+
+if (userData[0].userchoice === 'Weight Loss')
+          reduceWeight = MaintanenceCalorie - reduceCalorie;
+        else if (userData[0].userchoice === 'Weight Gain')
+          reduceWeight = MaintanenceCalorie + reduceCalorie;
+        else reduceWeight = MaintanenceCalorie;
+      
+        console.log(reduceWeight);
+
+
+       const breakfastCalorie = (reduceWeight * 30) / 100;
+       const dinnerCalorie = (reduceWeight * 30) / 100;
+       const lunchCalorie = (reduceWeight * 40) / 100;
+
+        console.log(`breakfastcalorie`, breakfastCalorie);
+        console.log(`lunchcalorie`, lunchCalorie);
+        console.log(`dinnercalorie`, dinnerCalorie);
+
+        let breakfastfood:any;
+        let lunchfood:any;
+        let dinnerfood:any;
+          this.getDataOnCategory('breakfast',breakfastCalorie).subscribe({next:(value:any)=> {breakfastfood=value; console.log(breakfastfood)}})
+          this.getDataOnCategory('lunch',lunchCalorie).subscribe({next:(value:any)=> {lunchfood=value; console.log(lunchfood)}})
+          this.getDataOnCategory('dinner',dinnerCalorie).subscribe({next:(value:any)=> {dinnerfood=value; console.log(dinnerfood)}})
+
+          const data =[{breakfast:breakfastfood, lunch:lunchfood,dinner:dinnerfood}];
+
+          console.log(data);
           
-          this.weightLossWeight = this.userData[0].usertargetweight;
+           return data;
+      }
+    
+
+       ) )
+
+      }
           
+    
 
-          this.reduceWeight = 1100 * this.weightLossWeight;
+getDataOnCategory(category:string,foodCalorie:number) :Observable<any>{
+        const  dietUrl="http://localhost:3000/diet"
 
-          if (this.userData[0].usergender === 'Male') {
-            this.BMR =
-              66.473 +
-              13.7516 * this.userData[0].userweight +
-              5.0033 * this.userData[0].userheight -
-              6.755 * this.userData[0].userage;
-          } else if (this.userData[0].usergender === 'Female') {
-            this.BMR =
-              655.1 +
-              9.563 * this.userData[0].userweight +
-              1.85 * this.userData[0].userheight -
-              4.676 * this.userData[0].userage;
+    return this.httpReq.get(dietUrl).pipe(map((data:any)=> {
+      const DietData:any = data;
+      const categoryFoodItems = DietData.filter((object: any) => {
+         for (let item of object.category) {
+           if (item === category) return object;
+         }
+       });
+       const randnumber = (Math.random() * (categoryFoodItems.length-1 - 0)).toFixed(0);
+       const foodItem = categoryFoodItems[randnumber];
+            //  console.log(foodItem);
+            let itemquantity:any = foodCalorie/foodItem.calorie;
+              if(foodItem.foodunit=="g"){
+                      itemquantity = (foodItem.quantity * itemquantity).toFixed(0);
+              } else{
+                      itemquantity = (foodItem.quantity).toFixed(0);
+              }
+              // console.log(`item quantity`, itemquantity);
+            let sidedishquantity :any =foodCalorie/foodItem.calorie;       
+              if(foodItem.sidedishunit=="g" || foodItem.sidedishunit=="ml" ){
+                  sidedishquantity = (foodItem.sidedishquantity * sidedishquantity).toFixed(0);
+              } else if(foodItem.sidedishunit=="piece"){
+               sidedishquantity = (sidedishquantity).toFixed(0);
+             } 
+            //  console.log(`sidedish quantity`,sidedishquantity);
+    const  food = [{food:foodItem, itemquantity: itemquantity, sidedishquantity:sidedishquantity}];
+        return food;
           }
-          this.MaintanenceCalorie = this.BMR * 1.55;
-
-          if (this.userData[0].userchoice === 'Weight Loss')
-            this.reduceWeight = this.MaintanenceCalorie - this.reduceWeight;
-          else if (this.userData[0].userchoice === 'Weight Gain')
-            this.reduceWeight = this.MaintanenceCalorie + this.reduceWeight;
-          else this.reduceWeight = this.MaintanenceCalorie;
-
-          console.log(`reduce calorie`, this.reduceWeight);
-
-          this.breakfastCalorie = (this.reduceWeight * 30) / 100;
-          this.dinnerCalorie = (this.reduceWeight * 30) / 100;
-          this.lunchCalorie = (this.reduceWeight * 40) / 100;
-
-          console.log(`breakfastcalorie`, this.breakfastCalorie);
-          console.log(`lunchcalorie`, this.lunchCalorie);
-          console.log(`dinnercalorie`, this.dinnerCalorie);
-
-          // const data = this.getDataOnCategory('breakfast', this.breakfastCalorie)
-
-          // data = {
-          //   breakfast:{},
-          //   luncg:{},
-          //   dinner:{}
-          // }
-          
-          console.log(`..................,,,,,,,,,,,,,,,`, this.getDataOnCategory('breakfast', this.breakfastCalorie));
-
-          this.getDataOnCategory('lunch', this.lunchCalorie);
-
-          this.getDataOnCategory('dinner', this.dinnerCalorie);
-        },
-      });
-      // this.userData = {reduceCalorie: this.reduceWeight, breakfastcalorie: this.breakfastCalorie, lunchcalorie:this.lunchCalorie, dinnercalorie:this.dinnerCalorie}
-  }
-
-  getDataOnCategory(category: string, calorie: number) {
-    this.service.get(this.dieturl).subscribe({
-      next: (value: any) => {
-        this.DietData = value;
-
-        this.categoryItems = this.DietData.filter((object: any) => {
-          for (let item of object.category) {
-            if (item === category) return object;
-          }
-        });
+))
         
-        this.randnumber = (Math.random() * (this.categoryItems.length-1 - 0)).toFixed(0);
-        console.log(this.randnumber);
-        
-      this.categoryItems = this.categoryItems[this.randnumber];
-      console.log(this.categoryItems);
+
+}
 
 
-       this.itemquantity = calorie/this.categoryItems.calorie;
-       if(this.categoryItems.foodunit=="g"){
-               this.itemquantity = (this.categoryItems.quantity * this.itemquantity).toFixed(0);
-       }
-       else{
-        this.itemquantity = (this.itemquantity).toFixed(0);
-       }
 
-      //  console.log(`item quantity`,this.itemquantity);
-
-       this.sidedishquantity =calorie/this.categoryItems.calorie;       
-
-       if(this.categoryItems.sidedishunit=="g" || this.categoryItems.sidedishunit=="ml" ){
-        this.sidedishquantity = (this.categoryItems.sidedishquantity * this.sidedishquantity).toFixed(0);
-       }
-      else if(this.categoryItems.sidedishunit=="piece"){
-        this.sidedishquantity = (this.sidedishquantity).toFixed(0);
-      } 
-
-      // console.log(`sidedish quantity`,this.sidedishquantity);
-
-
-     console.log(`Food: `, this.categoryItems.food, `Food Quantity: `, this.itemquantity, `SideDish: `,this.categoryItems.sidedish,
-     `SideDish Quantity: `,this.sidedishquantity);
-
-     this.DietData=  {food: this.categoryItems, foodquantity:this.itemquantity, sidedishquantity : this.sidedishquantity,category}
+// getDataOnCategory(category: string, foodCalorie: number): Observable<any> {  
+//      const dietUrl = 'http://localhost:3000/diet';   
+     
+//      return this.httpReq.get(dietUrl).pipe(   map((data: any) => {       
+//         const dietData: any = data;         
+//         const categoryFoodItems = dietData.filter((object: any) => {          
+//            return object.category.includes(category);         });      
+//               const randNumber = Math.floor(Math.random() * categoryFoodItems.length);     
+//                   const foodItem = categoryFoodItems[randNumber];      
+//                      let itemQuantity: any = foodCalorie / foodItem.calorie;      
+//                         if (foodItem.foodunit === 'g') {        
+//                              itemQuantity = (foodItem.quantity * itemQuantity).toFixed(0); 
+//                                     } else {           itemQuantity = foodItem.quantity.toFixed(0);         
+//                                     }         let sidedishQuantity: any = foodCalorie / foodItem.calorie;       
+//                                       if (foodItem.sidedishunit === 'g' || foodItem.sidedishunit === 'ml') {      
+//                                              sidedishQuantity = (foodItem.sidedishquantity * sidedishQuantity).toFixed(0);    
+//                                                  } else if (foodItem.sidedishunit === 'piece') {          
+//                                                    sidedishQuantity = sidedishQuantity.toFixed(0);        
+                                                  
+//                                                   }         const food = [{ food: foodItem, itemquantity: itemQuantity, sidedishquantity: sidedishQuantity }]; 
+//                                                   // console.log(food)      
+//                                                     return food;     
+//                                                     })     );   }
 
 
-     return  this.DietData;
-      },
-    });
-  }
 }

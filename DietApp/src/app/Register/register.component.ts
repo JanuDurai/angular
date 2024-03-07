@@ -15,10 +15,10 @@ export class RegisterComponent {
   weight!:string;
   invalidform:boolean=false;
 
-  constructor(private userDetails:UserService){}
+  constructor(private userService:UserService){}
     Data= new FormGroup({
-      userfirstname:new FormControl('',[Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*.{2,20}$/),Validators.required]),
-      userlastname:  new FormControl('',[Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*.{2,20}$/),Validators.required]),
+    userfirstname:new FormControl('',[Validators.required,Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*$/),Validators.minLength(0)]),
+      userlastname:  new FormControl('',[Validators.pattern(/^[A-za-z]+(?: [a-zA-Z]+)*$/),Validators.required,Validators.minLength(3)]),
       userage: new FormControl('',[Validators.min(18), Validators.max(60),Validators.required]),
       usergender:new FormControl('',[Validators.required]),
       userheight: new FormControl('',[Validators.required]),
@@ -32,13 +32,12 @@ export class RegisterComponent {
    },{validators:PasswordMatchValidation});
    
  onsubmit(){
-         
         if(this.Data.invalid){
             this.invalidform=true; 
         }
         else {
            this.invalidform=false;
-           this.userDetails.addUser(this.Data.value);
+           this.userService.addUser(this.Data.value);
         }
        
   }
